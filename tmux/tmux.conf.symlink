@@ -1,0 +1,217 @@
+#set -g default-command "fish"
+
+set -g default-terminal "tmux-256color" #"tmux"
+set -ga terminal-overrides "xterm-256color" #",*256color:Tc"
+
+#-- visual annoyance off ------------------------------------------------------
+
+set -g visual-bell      off
+set -g visual-silence   off
+set -g bell-action      none
+
+#-- settings ------------------------------------------------------------------
+
+set -g display-time 10000      # Messages and indicators timeout
+set -g base-index 1            # Windows counts from 1
+set -g pane-base-index 1       # Panes counts from 1
+set -g renumber-windows on     # Automatically renumber windows on new/delete
+set -g history-limit 1000      # Set the maximum number of lines held in window history
+set -g escape-time 0           # Set the time in milliseconds for which tmux waits after an
+                               # escape is input to determine if it is part of a function or
+                               # meta key sequences.  The default is 500 milliseconds ???? WTF ????
+set -g repeat-time 600         # Increase repeat timeout
+set -g display-panes-time 3000 # Visible indicator of each pane timeout
+
+set -g status-position bottom # top OR bottom
+# set -g status-interval 30
+
+#-- window --------------------------------------------------------------------
+
+set -g allow-rename     on  # Allow programs in the pane to change the window name
+set -g automatic-rename on  # When this setting is enabled, tmux will rename the window automatically
+set -g monitor-activity on  # Windows with activity are highlighted in the status line
+set -g visual-activity  off # Display a message instead of sending a bell
+
+#-- mouse ---------------------------------------------------------------------
+
+set -g mouse on             # Enable mouse support
+
+#-- key bindings --------------------------------------------------------------
+
+unbind -a               # Remove all default bindings
+
+set -g prefix C-a       # Prefix key
+bind C-a send-prefix    # Send prefix for nested sessions
+
+# Reload tmux configuration
+#bind R source-file $HOME/.config/tmux/tmux.conf \; display-message "Config reloaded"
+bind R source-file ~/.tmux.conf \; display-message "Config reloaded"
+
+#--- KILL
+bind x switch-client -T KILL \; display-message "KILL: x-pane, X-other panes, w-window, W-other windows, s-session, S-server, d-detach"
+# disable confirmation prompts
+#bind-key & kill-window
+#bind-key x kill-pane
+
+bind -T KILL x "kill-pane"
+bind -T KILL w "kill-window"
+bind -T KILL X confirm-before -p "Kill other panes except #P? (y/n)" "kill-pane -a"
+bind -T KILL W confirm-before -p "Kill other windows? (y/n)"         "kill-window -a"
+bind -T KILL s confirm-before -p "Kill session #S? (y/n)"            "kill-session"
+bind -T KILL S confirm-before -p "Kill server? (y/n)"                "kill-server"
+bind -T KILL d confirm-before -p "Detach client (y/n)"               "detach-client"
+
+#--- RENAME
+bind r switch-client -T RENAME \; display-message "RENAME: w-window, s-session"
+
+bind -T RENAME w command-prompt -I "#{window_name}"  "rename-window '%%'"
+bind -T RENAME s command-prompt -I "#{session_name}" "rename-session '%%'"
+
+#--- SPLIT
+bind w switch-client -T SPLIT \; display-message "SPLIT: s-split CWD, v-verically CWD"
+
+bind -T SPLIT s split-window -v -c "#{pane_current_path}"
+bind -T SPLIT v split-window -h -c "#{pane_current_path}"
+
+#--- NEW
+bind n switch-client -T NEW \; display-message "NEW: s-session, w-cwd window, W-window"
+
+bind -T NEW s command-prompt "new-session -s '%%' -c #{pane_current_path}"
+#bind -T NEW s new-session -c "#{pane_current_path}" 
+bind -T NEW w new-window -c "#{pane_current_path}"
+bind -T NEW W new-window
+
+bind -n "M-p" new-window 'session=$(tmux list-sessions -F "#{session_name}" | fzf --query="$1" --select-1 --exit-0) && tmux switch-client -t "$session"'
+bind -n "M-[" switch-client -p \; refresh-client -S
+bind -n "M-]" switch-client -n \; refresh-client -S
+
+#--- TOGGLE
+bind t switch-client -T TOGGLE \; display-message "TOGGLE: s-status"
+
+bind -T TOGGLE s if -F "#{s/off//:status}" "set status off" "set status on"
+
+#--- CHOOSE
+bind c switch-client -T CHOOSE \; display-message "CHOOSE: t-tree, s-session, w-window, c-client, b-buffer"
+
+bind -T CHOOSE t choose-tree
+bind -T CHOOSE s choose-session
+bind -T CHOOSE w choose-window
+bind -T CHOOSE c choose-client
+bind -T CHOOSE b choose-buffer
+
+#--- COMMAND PROMPT
+bind : command-prompt
+
+bind z resize-pane -Z # Zoom pane
+
+# pane navigation
+is_vim="ps -o state= -o comm= -t '#{pane_tty}' | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
+
+bind -n "M-Left"  if-shell "$is_vim" "send-keys M-Left"  { if -F "#{pane_at_left}"   "" "select-pane -L" }
+bind -n "M-Down"  if-shell "$is_vim" "send-keys M-Down"  { if -F "#{pane_at_bottom}" "" "select-pane -D" }
+bind -n "M-Up"    if-shell "$is_vim" "send-keys M-Up"    { if -F "#{pane_at_top}"    "" "select-pane -U" }
+bind -n "M-Right" if-shell "$is_vim" "send-keys M-Right" { if -F "#{pane_at_right}"  "" "select-pane -R" }
+
+# pane sizing
+bind -n "C-M-Left" if-shell "$is_vim" "send-keys C-M-Left" "resize-pane -L 2"
+bind -n "C-M-Down" if-shell "$is_vim" "send-keys C-M-Down" "resize-pane -D 1"
+bind -n "C-M-Up" if-shell "$is_vim" "send-keys C-M-Up" "resize-pane -U 1"
+bind -n "C-M-Right" if-shell "$is_vim" "send-keys C-M-Right" "resize-pane -R 2"
+
+bind "b" break-pane
+bind "p" display-panes
+bind "m" select-pane -m
+bind "M" swap-pane -t
+
+bind enter next-layout
+
+# split panes using | and -
+#bind-key - split-window -v  -c '#{pane_current_path}'
+#bind-key \\ split-window -h  -c '#{pane_current_path}'
+#bind = select-layout even-horizontal
+#bind -r "<" swap-window -d -t -1
+#bind -r ">" swap-window -d -t +1
+
+# window navigation
+bind -n "M-1" select-window -t 1
+bind -n "M-2" select-window -t 2
+bind -n "M-3" select-window -t 3
+bind -n "M-4" select-window -t 4
+bind -n "M-5" select-window -t 5
+bind -n "M-6" select-window -t 6
+
+set -g status-right "#{?client_prefix,[Prefix]#[default],}"
+
+#-- Plugins --------------------------------------------------------------
+
+set -g @plugin 'tmux-plugins/tpm'
+# set -g @plugin 'casonadams/tmux-vi-navigation'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'christoomey/vim-tmux-navigator'
+set -g @plugin 'wfxr/tmux-fzf-url' # prefix + u
+set -g @plugin 'dracula/tmux'
+# set -g @plugin 'odedlaz/tmux-onedark-theme'
+set -g @plugin 'fcsonline/tmux-thumbs'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+
+# prefix + I (install)
+# prefix + U (update)
+# prefix + alt + u (uninstall)
+# prefix + r (refresh)
+
+# available plugins: battery, cpu-usage, git, gpu-usage, ram-usage, tmux-ram-usage, network, network-bandwidth, network-ping, ssh-session, attached-clients, network-vpn, weather, time, mpc, spotify-tui, kubernetes-context, synchronize-panes
+set -g @dracula-plugins "cpu-usage ram-usage battery"
+
+# available colors: white, gray, dark_gray, light_purple, dark_purple, cyan, green, orange, red, pink, yellow
+# set -g @dracula-[plugin-name]-colors "[background] [foreground]"
+# set -g @dracula-cpu-usage-colors "pink dark_gray"
+
+set -g @dracula-show-powerline true
+set -g @dracula-show-left-sep 
+set -g @dracula-show-right-sep 
+set -g @dracula-show-flags true
+#set -g @dracula-refresh-rate 5
+set -g @dracula-show-left-icon 🥷
+set -g @dracula-show-empty-plugins true
+
+# tmux-thumbs
+# https://github.com/fcsonline/tmux-thumbs
+run-shell ~/.tmux/plugins/tmux-thumbs/tmux-thumbs.tmux
+# set -g @thumbs-key t
+# bind-key -r \; thumbs-pick
+set -g @thumbs-command 'echo -n {} | pbcopy'
+# set -g visual-activity off
+# set -g visual-bell off
+# set -g visual-silence on
+
+##############################################################
+# Update files on focus (using for vim)
+#set -g focus-events on
+
+# tell Tmux that outside terminal supports true color
+#set -ga terminal-overrides "xterm-256color"
+
+## bind-key -r f run-shell "tmux neww ~/bin/tmux-sessionizer"
+
+#bind-key e send-keys "tmux capture-pane -p -S - | nvim -c 'set buftype=nofile' +" Enter
+
+## bind-key M split-window -h "vim ~/.tmux.conf"
+
+# Use vim keybindings in copy mode
+#set -g set-clipboard off
+#setw -g mode-keys vi
+#unbind [
+#bind Escape copy-mode
+#bind-key -T copy-mode-vi v send -X begin-selection
+#bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel "pbcopy"
+#unbind -T copy-mode-vi Enter
+#bind-key -T copy-mode-vi Enter send -X copy-pipe-and-cancel "pbcopy"
+#unbind -T copy-mode-vi Space
+#bind -T copy-mode-vi Space send -X jump-again
+#bind-key -T copy-mode-vi 0 send -X back-to-indentation
+#bind y run 'tmux save-buffer - | pbcopy '
+#bind C-y run 'tmux save-buffer - | pbcopy '
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+
