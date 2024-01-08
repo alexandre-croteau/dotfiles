@@ -1,0 +1,261 @@
+{
+    "apps": [
+        {
+            "Updated": "2023-12-13T22:45:29.5024156-05:00",
+            "Name": "7zip",
+            "Source": "main",
+            "Info": "",
+            "Version": "23.01"
+        },
+        {
+            "Updated": "2023-12-14T13:27:22.8874048-05:00",
+            "Name": "alpinewsl",
+            "Source": "extras",
+            "Info": "",
+            "Version": "3.18.4-0"
+        },
+        {
+            "Updated": "2024-01-08T15:47:28.4943327-05:00",
+            "Name": "aws",
+            "Source": "main",
+            "Info": "",
+            "Version": "2.15.8"
+        },
+        {
+            "Updated": "2023-12-14T15:11:15.7533467-05:00",
+            "Name": "dark",
+            "Source": "main",
+            "Info": "",
+            "Version": "3.11.2"
+        },
+        {
+            "Updated": "2024-01-08T14:46:24.3486531-05:00",
+            "Name": "delta",
+            "Source": "main",
+            "Info": "",
+            "Version": "0.16.5"
+        },
+        {
+            "Updated": "2024-01-08T12:09:51.2547415-05:00",
+            "Name": "eza",
+            "Source": "main",
+            "Info": "",
+            "Version": "0.17.0"
+        },
+        {
+            "Updated": "2024-01-08T15:46:39.5717606-05:00",
+            "Name": "filezilla",
+            "Source": "extras",
+            "Info": "",
+            "Version": "3.66.4"
+        },
+        {
+            "Updated": "2024-01-08T15:46:03.3063531-05:00",
+            "Name": "gh",
+            "Source": "main",
+            "Info": "",
+            "Version": "2.41.0"
+        },
+        {
+            "Updated": "2023-12-14T10:35:02.0968922-05:00",
+            "Name": "go",
+            "Source": "main",
+            "Info": "",
+            "Version": "1.21.5"
+        },
+        {
+            "Updated": "2023-12-14T15:47:50.2819951-05:00",
+            "Name": "gpg4win",
+            "Source": "extras",
+            "Info": "",
+            "Version": "4.2.0"
+        },
+        {
+            "Updated": "2023-12-17T15:01:00.8956271-05:00",
+            "Name": "keepass",
+            "Source": "extras",
+            "Info": "",
+            "Version": "2.55"
+        },
+        {
+            "Updated": "2024-01-08T14:44:21.4838909-05:00",
+            "Name": "lazygit",
+            "Source": "extras",
+            "Info": "",
+            "Version": "0.40.2"
+        },
+        {
+            "Updated": "2023-12-14T10:40:23.9835296-05:00",
+            "Name": "lessmsi",
+            "Source": "main",
+            "Info": "",
+            "Version": "1.10.0"
+        },
+        {
+            "Updated": "2023-12-18T10:30:16.3142135-05:00",
+            "Name": "Meslo-NF-Mono",
+            "Source": "nerd-fonts",
+            "Info": "",
+            "Version": "3.1.1"
+        },
+        {
+            "Updated": "2024-01-08T13:39:43.3922602-05:00",
+            "Name": "mingw",
+            "Source": "main",
+            "Info": "",
+            "Version": "13.2.0-rt_v11-rev0"
+        },
+        {
+            "Updated": "2023-12-14T10:40:42.3333186-05:00",
+            "Name": "neovim",
+            "Source": "main",
+            "Info": "",
+            "Version": "0.9.4"
+        },
+        {
+            "Updated": "2023-12-19T15:44:50.9926163-05:00",
+            "Name": "notepadplusplus",
+            "Source": "extras",
+            "Info": "",
+            "Version": "8.6"
+        },
+        {
+            "Updated": "2023-12-18T16:21:01.3533764-05:00",
+            "Name": "nsis",
+            "Source": "extras",
+            "Info": "",
+            "Version": "3.09"
+        },
+        {
+            "Updated": "2023-12-14T15:06:18.9406542-05:00",
+            "Name": "nuget",
+            "Source": "main",
+            "Info": "",
+            "Version": "6.8.0"
+        },
+        {
+            "Updated": "2023-12-14T15:06:58.2888483-05:00",
+            "Name": "nuget-package-explorer",
+            "Source": "extras",
+            "Info": "",
+            "Version": "6.0.64"
+        },
+        {
+            "Updated": "2023-12-14T15:05:39.5991156-05:00",
+            "Name": "nvm",
+            "Source": "main",
+            "Info": "",
+            "Version": "1.1.12"
+        },
+        {
+            "Updated": "2024-01-08T15:39:28.6113271-05:00",
+            "Name": "oh-my-posh",
+            "Source": "main",
+            "Info": "",
+            "Version": "19.4.0"
+        },
+        {
+            "Updated": "2023-12-15T17:00:14.5501093-05:00",
+            "Name": "oraclejre8",
+            "Source": "java",
+            "Info": "",
+            "Version": "8u391"
+        },
+        {
+            "Updated": "2023-12-14T15:05:27.0352558-05:00",
+            "Name": "packer",
+            "Source": "main",
+            "Info": "",
+            "Version": "1.10.0"
+        },
+        {
+            "Updated": "2023-12-14T15:16:00.9006731-05:00",
+            "Name": "postman",
+            "Source": "extras",
+            "Info": "",
+            "Version": "10.21.0"
+        },
+        {
+            "Updated": "2023-12-13T23:02:18.5018894-05:00",
+            "Name": "pwsh",
+            "Source": "main",
+            "Info": "",
+            "Version": "7.4.0"
+        },
+        {
+            "Updated": "2023-12-14T15:12:30.362531-05:00",
+            "Name": "python",
+            "Source": "main",
+            "Info": "",
+            "Version": "3.12.1"
+        },
+        {
+            "Updated": "2023-12-14T15:03:34.0263323-05:00",
+            "Name": "terraform",
+            "Source": "<auto-generated>",
+            "Info": "Held package",
+            "Version": "1.4.4"
+        },
+        {
+            "Updated": "2023-12-14T15:13:43.4556246-05:00",
+            "Name": "terraform-docs",
+            "Source": "C:\\Users\\u362acro\\scoop\\buckets\\main\\bucket\\terraform-docs.json",
+            "Info": "Held package",
+            "Version": "0.16.0"
+        },
+        {
+            "Updated": "2023-12-14T15:13:21.5001808-05:00",
+            "Name": "tflint",
+            "Source": "<auto-generated>",
+            "Info": "Held package",
+            "Version": "0.45.0"
+        },
+        {
+            "Updated": "2023-12-14T10:42:16.1009456-05:00",
+            "Name": "vcredist2022",
+            "Source": "extras",
+            "Info": "",
+            "Version": "14.38.33130.0"
+        },
+        {
+            "Updated": "2023-12-13T22:58:30.0625506-05:00",
+            "Name": "vscode",
+            "Source": "extras",
+            "Info": "",
+            "Version": "1.85.1"
+        },
+        {
+            "Updated": "2023-12-13T23:06:02.5591603-05:00",
+            "Name": "git",
+            "Source": "main",
+            "Info": "Global install",
+            "Version": "2.43.0"
+        }
+    ],
+    "buckets": [
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": "2024-01-08T15:25:27-05:00",
+            "Manifests": 1892
+        },
+        {
+            "Name": "java",
+            "Source": "https://github.com/ScoopInstaller/Java",
+            "Updated": "2024-01-08T03:19:27-05:00",
+            "Manifests": 267
+        },
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main",
+            "Updated": "2024-01-08T15:24:46-05:00",
+            "Manifests": 1268
+        },
+        {
+            "Name": "nerd-fonts",
+            "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
+            "Updated": "2024-01-07T07:20:16-05:00",
+            "Manifests": 327
+        }
+    ]
+}
