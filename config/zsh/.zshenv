@@ -45,13 +45,14 @@ export EDITOR="nvim"
 
 alias g="git"
 alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
 # alias nv="neovide"
 # alias cat="bat"
 # alias ccat="/bin/cat"
 alias resource="source \$HOME/.zshrc"
 alias ls="ls -phFHAtG --color=auto"
-alias ll="eza --long --header --icons"
-alias la="eza --long --header --icons --all"
+alias ll="eza --long --header --icons --all"
 alias mkdir='mkdir -p'
 # alias rg='ranger'
 # alias sudo='sudo -E'
