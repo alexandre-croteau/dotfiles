@@ -15,6 +15,13 @@ while true; do
 	kill -0 "$$" || exit
 done 2>/dev/null &
 
+# Use touch id for sudo
+if ! cat /etc/pam.d/sudo | grep pam_tid >/dev/null; then
+	sudo sed -i '' '2i\
+auth       sufficient     pam_tid.so
+' /etc/pam.d/sudo
+fi
+
 ######################################################################
 
 # Disable the sound effects on boot
