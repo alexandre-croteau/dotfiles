@@ -1,10 +1,7 @@
 #!/bin/bash
-#
-# bootstrap installs things.
 
 cd "$(dirname "$0")/.."
 
-#dotfiles_root=$(pwd -P)
 dotfiles_root=$(cd -P "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)
 
 #! [ -d "$dotfiles_root/config/zsh/custom" ] && mkdir -p "$dotfiles_root/config/zsh/custom"
@@ -214,12 +211,18 @@ install_dotconfig() {
 
 install_deps() {
 
-	info "installing dependencies"
-	if source scripts/deps.sh | while read -r data; do info "$data"; done; then
-		success "dependencies installed"
-	else
-		fail "error installing dependencies"
+	# Set macOS defaults
+	if [ "$(uname -s)" == "Darwin" ]; then
+		echo "› Applying macOS defaults..."
+		$dotfiles_root/macos/set-defaults.sh
 	fi
+
+	# Install software
+	info "installing softwares"
+
+	find . -name install.sh | while read installer; do
+		sh -c "${installer}"
+	done
 
 }
 
