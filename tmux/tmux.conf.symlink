@@ -1,19 +1,11 @@
-#set -g default-command "fish"
+# ==========================
+# ===  General settings  ===
+# ==========================
 
 set -g default-terminal "tmux-256color" #"tmux"
 set -ga terminal-overrides "xterm-256color" #",*256color:Tc"
 
-#-- visual annoyance off ------------------------------------------------------
-
-set -g visual-bell      off
-set -g visual-silence   off
-set -g bell-action      none
-
-#-- settings ------------------------------------------------------------------
-
 set -g display-time 10000      # Messages and indicators timeout
-set -g base-index 1            # Windows counts from 1
-set -g pane-base-index 1       # Panes counts from 1
 set -g renumber-windows on     # Automatically renumber windows on new/delete
 set -g history-limit 1000      # Set the maximum number of lines held in window history
 set -g escape-time 0           # Set the time in milliseconds for which tmux waits after an
@@ -23,74 +15,75 @@ set -g repeat-time 600         # Increase repeat timeout
 set -g display-panes-time 3000 # Visible indicator of each pane timeout
 
 set -g status-position bottom # top OR bottom
-# set -g status-interval 30
 
-#-- window --------------------------------------------------------------------
+set -g buffer-limit 20
+set -sg escape-time 0
+set -g display-time 5000
+set -g remain-on-exit off
+set -g repeat-time 1000
 
+#-- windows --
+
+setw -g aggressive-resize on
+#setw -g allow-rename off
 set -g allow-rename     on  # Allow programs in the pane to change the window name
+#setw -g automatic-rename off
 set -g automatic-rename on  # When this setting is enabled, tmux will rename the window automatically
 set -g monitor-activity on  # Windows with activity are highlighted in the status line
-set -g visual-activity  off # Display a message instead of sending a bell
 
-#-- mouse ---------------------------------------------------------------------
+# Set parent terminal title to reflect current window in tmux session 
+set -g set-titles on
+set -g set-titles-string "#I:#W"
 
-set -g mouse on             # Enable mouse support
+# Start index of window/pane with 1, because we're humans, not computers
+set -g base-index 1
+setw -g pane-base-index 1
 
-#-- key bindings --------------------------------------------------------------
+# Enable mouse support
+set -g mouse on
 
-unbind -a               # Remove all default bindings
+# ==========================
+# ===   Key bindings     ===
+# ==========================
 
-set -g prefix C-a       # Prefix key
-bind C-a send-prefix    # Send prefix for nested sessions
+# Change prefix key to C-a, easier to type, same to "screen"
+unbind C-b
+set -g prefix C-a
 
-# Reload tmux configuration
-#bind R source-file $HOME/.config/tmux/tmux.conf \; display-message "Config reloaded"
-bind R source-file ~/.tmux.conf \; display-message "Config reloaded"
+# Unbind default key bindings, we're going to override
+unbind "\$" # rename-session
+unbind ,    # rename-window
+unbind %    # split-window -h
+unbind '"'  # split-window
+unbind '}'  # swap-pane -D
+unbind '{'  # swap-pane -U
+unbind '['  # paste-buffer
+unbind ']'
+unbind "'"  # select-window
+unbind c    #
+unbind n    # next-window
+unbind p    # previous-window
+unbind l    # last-window
+unbind M-n  # next window with alert
+unbind M-p  # next window with alert
+unbind o    # focus thru panes
+unbind q    # display-panes
+unbind &    # kill-window
+unbind "#"  # list-buffer 
+unbind =    # choose-buffer
+unbind z    # zoom-pane
+unbind M-Up  # resize 5 rows up
+unbind M-Down # resize 5 rows down
+unbind M-Right # resize 5 rows right
+unbind M-Left # resize 5 rows left
 
-#--- KILL
-bind x switch-client -T KILL \; display-message "KILL: x-pane, X-other panes, w-window, W-other windows, s-session, S-server, d-detach"
-# disable confirmation prompts
-#bind-key & kill-window
-#bind-key x kill-pane
+# Edit configuration and reload
+bind C-e new-window -n 'tmux.conf' "sh -c '\${EDITOR:-vim} ~/.tmux.conf && tmux source ~/.tmux.conf && tmux display \"Config reloaded\"'"
 
-bind -T KILL x "kill-pane"
-bind -T KILL w "kill-window"
-bind -T KILL X confirm-before -p "Kill other panes except #P? (y/n)" "kill-pane -a"
-bind -T KILL W confirm-before -p "Kill other windows? (y/n)"         "kill-window -a"
-bind -T KILL s confirm-before -p "Kill session #S? (y/n)"            "kill-session"
-bind -T KILL S confirm-before -p "Kill server? (y/n)"                "kill-server"
-bind -T KILL d confirm-before -p "Detach client (y/n)"               "detach-client"
+# Reload tmux configuration 
+bind C-r source-file ~/.tmux.conf \; display "Config reloaded"
 
-#--- RENAME
-bind r switch-client -T RENAME \; display-message "RENAME: w-window, s-session"
-
-bind -T RENAME w command-prompt -I "#{window_name}"  "rename-window '%%'"
-bind -T RENAME s command-prompt -I "#{session_name}" "rename-session '%%'"
-
-#--- SPLIT
-bind w switch-client -T SPLIT \; display-message "SPLIT: s-split CWD, v-verically CWD"
-
-bind -T SPLIT s split-window -v -c "#{pane_current_path}"
-bind -T SPLIT v split-window -h -c "#{pane_current_path}"
-
-#--- NEW
-bind n switch-client -T NEW \; display-message "NEW: s-session, w-cwd window, W-window"
-
-bind -T NEW s command-prompt "new-session -s '%%' -c #{pane_current_path}"
-#bind -T NEW s new-session -c "#{pane_current_path}" 
-bind -T NEW w new-window -c "#{pane_current_path}"
-bind -T NEW W new-window
-
-bind -n "M-p" new-window 'session=$(tmux list-sessions -F "#{session_name}" | fzf --query="$1" --select-1 --exit-0) && tmux switch-client -t "$session"'
-bind -n "M-[" switch-client -p \; refresh-client -S
-bind -n "M-]" switch-client -n \; refresh-client -S
-
-#--- TOGGLE
-bind t switch-client -T TOGGLE \; display-message "TOGGLE: s-status"
-
-bind -T TOGGLE s if -F "#{s/off//:status}" "set status off" "set status on"
-
-#--- CHOOSE
+# Choose
 bind c switch-client -T CHOOSE \; display-message "CHOOSE: t-tree, s-session, w-window, c-client, b-buffer"
 
 bind -T CHOOSE t choose-tree
@@ -99,65 +92,155 @@ bind -T CHOOSE w choose-window
 bind -T CHOOSE c choose-client
 bind -T CHOOSE b choose-buffer
 
-#--- COMMAND PROMPT
-bind : command-prompt
+# new session and window
+#bind n new-window -c "#{pane_current_path}"
+bind n switch-client -T NEW \; display-message "NEW: s-session, w-cwd window, W-window"
 
-bind z resize-pane -Z # Zoom pane
+bind -T NEW s command-prompt "new-session -s '%%' -c #{pane_current_path}"
+##bind -T NEW s new-session -c "#{pane_current_path}"
+bind -T NEW w new-window -c "#{pane_current_path}"
+bind -T NEW W new-window
 
-# pane navigation
+#bind -n "C-p" new-window 'session=$(tmux list-sessions -F "#{session_name}" | fzf --query="$1" --select-1 --exit-0) && tmux switch-client -t "$session"'
+#bind -n "C-[" switch-client -p \; refresh-client -S
+#bind -n "C-]" switch-client -n \; refresh-client -S
+
+# Prompt to rename window right after it's created
+set-hook -g after-new-window 'command-prompt -I "#{window_name}" "rename-window '%%'"'
+
+# Rename session and window
+bind r command-prompt -I "#{window_name}" "rename-window '%%'"
+bind R command-prompt -I "#{session_name}" "rename-session '%%'"
+
+#bind r switch-client -T RENAME \; display-message "RENAME: w-window, s-session"
+#bind -T RENAME w command-prompt -I "#{window_name}"  "rename-window '%%'"
+#bind -T RENAME s command-prompt -I "#{session_name}" "rename-session '%%'"
+
+# Split panes
+bind \\ split-window -h -c "#{pane_current_path}"
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+bind = select-layout even-horizontal
+bind -r "<" swap-window -d -t -1
+bind -r ">" swap-window -d -t +1
+#bind w switch-client -T SPLIT \; display-message "SPLIT: s-split CWD, v-verically CWD"
+#bind -T SPLIT s split-window -v -c "#{pane_current_path}"
+#bind -T SPLIT v split-window -h -c "#{pane_current_path}"
+
+# Select pane and windows
+#bind -r C-[ previous-window
+#bind -r C-] next-window
+#bind -r [ select-pane -t :.-
+#bind -r ] select-pane -t :.+
+bind -r Tab next-window
+bind -r BTab previous-window
+bind -r C-o swap-pane -D
+
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
 
-bind -n "M-Left"  if-shell "$is_vim" "send-keys M-Left"  { if -F "#{pane_at_left}"   "" "select-pane -L" }
-bind -n "M-Down"  if-shell "$is_vim" "send-keys M-Down"  { if -F "#{pane_at_bottom}" "" "select-pane -D" }
-bind -n "M-Up"    if-shell "$is_vim" "send-keys M-Up"    { if -F "#{pane_at_top}"    "" "select-pane -U" }
-bind -n "M-Right" if-shell "$is_vim" "send-keys M-Right" { if -F "#{pane_at_right}"  "" "select-pane -R" }
+bind -n "S-Left"  if-shell "$is_vim" "send-keys S-Left"  { if -F "#{pane_at_left}"   "" "select-pane -L" }
+bind -n "S-Down"  if-shell "$is_vim" "send-keys S-Down"  { if -F "#{pane_at_bottom}" "" "select-pane -D" }
+bind -n "S-Up"    if-shell "$is_vim" "send-keys S-Up"    { if -F "#{pane_at_top}"    "" "select-pane -U" }
+bind -n "S-Right" if-shell "$is_vim" "send-keys S-Right" { if -F "#{pane_at_right}"  "" "select-pane -R" }
 
-# pane sizing
 bind -n "C-M-Left" if-shell "$is_vim" "send-keys C-M-Left" "resize-pane -L 2"
 bind -n "C-M-Down" if-shell "$is_vim" "send-keys C-M-Down" "resize-pane -D 1"
 bind -n "C-M-Up" if-shell "$is_vim" "send-keys C-M-Up" "resize-pane -U 1"
 bind -n "C-M-Right" if-shell "$is_vim" "send-keys C-M-Right" "resize-pane -R 2"
 
-bind "b" break-pane
-bind "p" display-panes
-bind "m" select-pane -m
-bind "M" swap-pane -t
+# Link window
+bind L command-prompt -p "Link window from (session:window): " "link-window -s %% -a"
 
-bind enter next-layout
+# Swap panes back and forth with 1st pane
+# When in main-(horizontal|vertical) layouts, the biggest/widest panel is always @1
+#bind \ if '[ #{pane_index} -eq 1 ]' \
+     'swap-pane -s "!"' \
+     'select-pane -t:.1 ; swap-pane -d -t 1 -s "!"'
 
-# split panes using | and -
-#bind-key - split-window -v  -c '#{pane_current_path}'
-#bind-key \\ split-window -h  -c '#{pane_current_path}'
-#bind = select-layout even-horizontal
-#bind -r "<" swap-window -d -t -1
-#bind -r ">" swap-window -d -t +1
+# Kill pane/window/session shortcuts
+bind C-x confirm-before -p "kill other windows? (y/n)" "kill-window -a"
+bind q confirm-before -p "kill-session #S? (y/n)" kill-session
 
-# window navigation
-bind -n "M-1" select-window -t 1
-bind -n "M-2" select-window -t 2
-bind -n "M-3" select-window -t 3
-bind -n "M-4" select-window -t 4
-bind -n "M-5" select-window -t 5
-bind -n "M-6" select-window -t 6
+bind x kill-pane
 
-set -g status-right "#{?client_prefix,[Prefix]#[default],}"
+#bind X kill-window
+bind X switch-client -T KILL \; display-message "KILL: x-pane, X-other panes, w-window, W-other windows, s-session, S-server, d-detach"
+bind -T KILL x "kill-pane"
+bind -T KILL w "kill-window"
+bind -T KILL X confirm-before -p "Kill other panes except #P? (y/n)" "kill-pane -a"
+bind -T KILL W confirm-before -p "Kill other windows? (y/n)"         "kill-window -a"
+bind -T KILL s confirm-before -p "Kill session #S? (y/n)"            "kill-session"
+bind -T KILL S confirm-before -p "Kill server? (y/n)"                "kill-server"
+bind -T KILL d confirm-before -p "Detach client (y/n)"               "detach-client"
 
-#-- Plugins --------------------------------------------------------------
+# Merge session with another one (e.g. move all windows)
+# If you use adhoc 1-window sessions, and you want to preserve session upon exit
+# but don't want to create a lot of small unnamed 1-window sessions around
+# move all windows from current session to main named one (dev, work, etc)
+bind C-u command-prompt -p "Session to merge with: " \
+   "run-shell 'yes | head -n #{session_windows} | xargs -I {} -n 1 tmux movew -t %%'"
 
+# Detach from session
+bind d detach
+bind D if -F '#{session_many_attached}' \
+    'confirm-before -p "Detach other clients? (y/n)" "detach -a"' \
+    'display "Session has only 1 client attached"'
+
+# Hide status bar on demand
+bind C-s if -F '#{s/off//:status}' 'set status off' 'set status on'
+#bind t switch-client -T TOGGLE \; display-message "TOGGLE: s-status"
+#bind -T TOGGLE s if -F "#{s/off//:status}" "set status off" "set status on"
+
+# ==================================================
+# === Window monitoring for activity and silence ===
+# ==================================================
+bind m setw monitor-activity \; display-message 'Monitor window activity [#{?monitor-activity,ON,OFF}]'
+bind M if -F '#{monitor-silence}' \
+    'setw monitor-silence 0 ; display-message "Monitor window silence [OFF]"' \
+    'command-prompt -p "Monitor silence: interval (s)" "setw monitor-silence %%"'
+
+# Activity bell and whistles
+set -g visual-activity  off # Display a message instead of sending a bell
+
+# TODO: Does not work as well, check on newer versions
+# set -g visual-silence on
+set -g visual-silence   off
+
+# BUG: bell-action other ignored · Issue #1027 · tmux/tmux · GitHub - https://github.com/tmux/tmux/issues/1027
+# set -g visual-bell on
+# setw -g bell-action other
+set -g visual-bell      off
+set -g bell-action      none
+
+# ============================
+# ===       Plugins        ===
+# ============================
+
+# tmux plugin manager
 set -g @plugin 'tmux-plugins/tpm'
-# set -g @plugin 'casonadams/tmux-vi-navigation'
+set-option -g @tpm-install "I";
+set-option -g @tpm-update "U";
+set-option -g @tpm-clean "C-u";
+
+# ...
 set -g @plugin 'tmux-plugins/tmux-sensible'
+#set -g @plugin 'tmux-plugins/tmux-resurrect'
+#set -g @plugin 'tmux-plugins/tmux-battery'
+#set -g @plugin 'tmux-plugins/tmux-online-status'
+#set -g @plugin 'tmux-plugins/tmux-copycat'
+#set -g @plugin 'tmux-plugins/tmux-open'
+#set -g @plugin 'samoshkin/tmux-plugin-sysstat'
 set -g @plugin 'christoomey/vim-tmux-navigator'
 set -g @plugin 'wfxr/tmux-fzf-url' # prefix + u
-set -g @plugin 'dracula/tmux'
-# set -g @plugin 'odedlaz/tmux-onedark-theme'
-set -g @plugin 'fcsonline/tmux-thumbs'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
 
-# prefix + I (install)
-# prefix + U (update)
-# prefix + alt + u (uninstall)
-# prefix + r (refresh)
+# Sidebar
+set -g @plugin 'tmux-plugins/tmux-sidebar'
+set -g @sidebar-tree 't'
+set -g @sidebar-tree-focus 'T'
+set -g @sidebar-tree-command 'tree -C'
+
+# Dracula
+set -g @plugin 'dracula/tmux'
 
 # available plugins: battery, cpu-usage, git, gpu-usage, ram-usage, tmux-ram-usage, network, network-bandwidth, network-ping, ssh-session, attached-clients, network-vpn, weather, time, mpc, spotify-tui, kubernetes-context, synchronize-panes
 set -g @dracula-plugins "cpu-usage ram-usage battery"
@@ -173,44 +256,6 @@ set -g @dracula-show-flags true
 #set -g @dracula-refresh-rate 5
 set -g @dracula-show-left-icon 🥷
 set -g @dracula-show-empty-plugins true
-
-# tmux-thumbs
-# https://github.com/fcsonline/tmux-thumbs
-run-shell ~/.tmux/plugins/tmux-thumbs/tmux-thumbs.tmux
-# set -g @thumbs-key t
-# bind-key -r \; thumbs-pick
-set -g @thumbs-command 'echo -n {} | pbcopy'
-# set -g visual-activity off
-# set -g visual-bell off
-# set -g visual-silence on
-
-##############################################################
-# Update files on focus (using for vim)
-#set -g focus-events on
-
-# tell Tmux that outside terminal supports true color
-#set -ga terminal-overrides "xterm-256color"
-
-## bind-key -r f run-shell "tmux neww ~/bin/tmux-sessionizer"
-
-#bind-key e send-keys "tmux capture-pane -p -S - | nvim -c 'set buftype=nofile' +" Enter
-
-## bind-key M split-window -h "vim ~/.tmux.conf"
-
-# Use vim keybindings in copy mode
-#set -g set-clipboard off
-#setw -g mode-keys vi
-#unbind [
-#bind Escape copy-mode
-#bind-key -T copy-mode-vi v send -X begin-selection
-#bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel "pbcopy"
-#unbind -T copy-mode-vi Enter
-#bind-key -T copy-mode-vi Enter send -X copy-pipe-and-cancel "pbcopy"
-#unbind -T copy-mode-vi Space
-#bind -T copy-mode-vi Space send -X jump-again
-#bind-key -T copy-mode-vi 0 send -X back-to-indentation
-#bind y run 'tmux save-buffer - | pbcopy '
-#bind C-y run 'tmux save-buffer - | pbcopy '
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
