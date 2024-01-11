@@ -1,12 +1,11 @@
 #!/bin/zsh
 
 source "$CONFIG/zsh/.zshenv"
+source "$CONFIG/zsh/functions.zsh"
 
 WHO=$(whoami)
 
-source "$CONFIG/zsh/functions.zsh"
-
-export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 
 #[ -r "$HOME/env.zsh" ] && source "$HOME/env.zsh"
 
