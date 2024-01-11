@@ -117,8 +117,7 @@ bind R command-prompt -I "#{session_name}" "rename-session '%%'"
 #bind -T RENAME s command-prompt -I "#{session_name}" "rename-session '%%'"
 
 # Split panes
-bind \\ split-window -h -c "#{pane_current_path}"
-bind | split-window -h -c "#{pane_current_path}"
+bind + split-window -h -c "#{pane_current_path}"
 bind - split-window -v -c "#{pane_current_path}"
 bind = select-layout even-horizontal
 bind -r "<" swap-window -d -t -1
@@ -138,15 +137,15 @@ bind -r C-o swap-pane -D
 
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
 
-bind -n "S-Left"  if-shell "$is_vim" "send-keys S-Left"  { if -F "#{pane_at_left}"   "" "select-pane -L" }
-bind -n "S-Down"  if-shell "$is_vim" "send-keys S-Down"  { if -F "#{pane_at_bottom}" "" "select-pane -D" }
-bind -n "S-Up"    if-shell "$is_vim" "send-keys S-Up"    { if -F "#{pane_at_top}"    "" "select-pane -U" }
-bind -n "S-Right" if-shell "$is_vim" "send-keys S-Right" { if -F "#{pane_at_right}"  "" "select-pane -R" }
+bind -n "M-Left"  if-shell "$is_vim" "send-keys M-Left"  { if -F "#{pane_at_left}"   "" "select-pane -L" }
+bind -n "M-Down"  if-shell "$is_vim" "send-keys M-Down"  { if -F "#{pane_at_bottom}" "" "select-pane -D" }
+bind -n "M-Up"    if-shell "$is_vim" "send-keys M-Up"    { if -F "#{pane_at_top}"    "" "select-pane -U" }
+bind -n "M-Right" if-shell "$is_vim" "send-keys M-Right" { if -F "#{pane_at_right}"  "" "select-pane -R" }
 
-bind -n "C-M-Left" if-shell "$is_vim" "send-keys C-M-Left" "resize-pane -L 2"
-bind -n "C-M-Down" if-shell "$is_vim" "send-keys C-M-Down" "resize-pane -D 1"
-bind -n "C-M-Up" if-shell "$is_vim" "send-keys C-M-Up" "resize-pane -U 1"
-bind -n "C-M-Right" if-shell "$is_vim" "send-keys C-M-Right" "resize-pane -R 2"
+bind -n "C-M-Left" if-shell "$is_vim" "send-keys C-Left" "resize-pane -L 2"
+bind -n "C-M-Down" if-shell "$is_vim" "send-keys C-Down" "resize-pane -D 1"
+bind -n "C-M-Up" if-shell "$is_vim" "send-keys C-Up" "resize-pane -U 1"
+bind -n "C-M-Right" if-shell "$is_vim" "send-keys C-Right" "resize-pane -R 2"
 
 # Link window
 bind L command-prompt -p "Link window from (session:window): " "link-window -s %% -a"
@@ -161,7 +160,7 @@ bind L command-prompt -p "Link window from (session:window): " "link-window -s %
 bind C-x confirm-before -p "kill other windows? (y/n)" "kill-window -a"
 bind q confirm-before -p "kill-session #S? (y/n)" kill-session
 
-bind x kill-pane
+bind -n "C-w" if-shell "$is_vim" "send-keys C-w" { kill-pane }
 
 #bind X kill-window
 bind X switch-client -T KILL \; display-message "KILL: x-pane, X-other panes, w-window, W-other windows, s-session, S-server, d-detach"
@@ -223,14 +222,14 @@ set-option -g @tpm-update "U";
 set-option -g @tpm-clean "C-u";
 
 # ...
-set -g @plugin 'tmux-plugins/tmux-sensible'
+#set -g @plugin 'tmux-plugins/tmux-sensible'
 #set -g @plugin 'tmux-plugins/tmux-resurrect'
 #set -g @plugin 'tmux-plugins/tmux-battery'
 #set -g @plugin 'tmux-plugins/tmux-online-status'
 #set -g @plugin 'tmux-plugins/tmux-copycat'
 #set -g @plugin 'tmux-plugins/tmux-open'
 #set -g @plugin 'samoshkin/tmux-plugin-sysstat'
-set -g @plugin 'christoomey/vim-tmux-navigator'
+#set -g @plugin 'christoomey/vim-tmux-navigator'
 set -g @plugin 'wfxr/tmux-fzf-url' # prefix + u
 
 # Sidebar
