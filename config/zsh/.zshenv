@@ -51,7 +51,7 @@ alias vim="nvim"
 # alias cat="bat"
 # alias ccat="/bin/cat"
 alias resource="source \$HOME/.zshrc"
-alias ls="ls -phFHAtG --color=auto"
+alias ls="ls -phlaFHAt --color=auto"
 alias ll="eza --long --header --icons --all"
 alias mkdir='mkdir -p'
 # alias rg='ranger'
