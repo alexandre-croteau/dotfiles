@@ -1,0 +1,15 @@
+gui:
+  windowSize: 'normal' # one of 'normal' | 'half' | 'full' default is 'normal'
+  nerdFontsVersion: "3" # 2 or 3
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+    useConfig: false
+os:
+  # edit: 'myeditor {{filename}}'
+  # editAtLine: 'myeditor --line={{line}} {{filename}}'
+  # editAtLineAndWait: 'myeditor --block --line={{line}} {{filename}}'
+  # editInTerminal: true
+  editPreset: 'nvim' # vscode, nvim
+  # openDirInEditor: 'myeditor {{dir}}'

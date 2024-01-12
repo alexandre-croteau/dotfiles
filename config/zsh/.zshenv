@@ -4,13 +4,15 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-export CURL_HOME=$CONFIG/curl
+export CURL_HOME="$CONFIG/curl"
 
 export ZSH_COMPDUMP="$CACHE/.zcompdump"
 export ZCOMPDUMP="$CACHE/.zcompdump"
 
 export ZDOTDIR="$CONFIG/zsh"
 export USER_ZDOTDIR="$ZDOTDIR"
+
+export XDG_CONFIG_HOME="$CONFIG"
 
 export HISTFILE=$CACHE/.zsh_history
 export HIST_STAMPS="yyyy.mm.dd"
