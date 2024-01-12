@@ -4,10 +4,6 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
--- Delete some pre-builds keys from lazyvim
-keymap.del("n", "<C-s>")
-keymap.del("n", "<leader>e")
-
 --Delete with x does not copy to clipboard
 keymap.set("n", "x", '"_x')
 -- Save file using leader w
