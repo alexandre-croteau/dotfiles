@@ -7,3 +7,5 @@ New-Alias -Name "ll" -Value "Open-Eza" -Description "eza aka exa" -Option ReadOn
 function Open-Neovim([string]$FileName) { & nvim $FileName }
 New-Alias -Name "vi" -Value "Open-Neovim" -Description "neovim" -Option ReadOnly -Force
 New-Alias -Name "vim" -Value "Open-Neovim" -Description "neovim" -Option ReadOnly -Force
+
+Import-Module posh-git
