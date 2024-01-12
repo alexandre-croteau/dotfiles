@@ -13,4 +13,8 @@ if ($IsWindows) {
   # Move-Item $env:LOCALAPPDATA\nvim-data $env:LOCALAPPDATA\nvim-data.bak -Force
   New-Item -Path "$env:LOCALAPPDATA\nvim" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\lazyvim" -Force
 
+  ### Lazygit
+  # https://github.com/jesseduffield/lazygit
+  Move-Item $env:APPDATA\lazygit $env:APPDATA\lazygit.bak -Force
+  New-Item -Path "$env:APPDATA\lazygit" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\lazygit" -Force
 }
