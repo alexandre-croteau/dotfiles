@@ -7,10 +7,10 @@ if ($IsWindows) {
   Move-Item $env:USERPROFILE\.config\scoop $env:USERPROFILE\.config\scoop.bak -Force
   New-Item -Path "$env:USERPROFILE\.config\scoop" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\scoop" -Force
 
-  ### Neovim
+  ### Lazyvim
   # 1. Install LazyVim https://www.lazyvim.org/installation
   # Move-Item $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak -Force
   # Move-Item $env:LOCALAPPDATA\nvim-data $env:LOCALAPPDATA\nvim-data.bak -Force
+  New-Item -Path "$env:LOCALAPPDATA\nvim" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\lazyvim" -Force
 
-  New-Item -Path "$env:LOCALAPPDATA\nvim" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\nvim" -Force
 }
