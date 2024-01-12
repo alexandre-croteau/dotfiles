@@ -1,6 +1,7 @@
 gui:
   windowSize: 'normal' # one of 'normal' | 'half' | 'full' default is 'normal'
   nerdFontsVersion: "3" # 2 or 3
+  skipDiscardChangeWarning: true
 git:
   paging:
     colorArg: always
