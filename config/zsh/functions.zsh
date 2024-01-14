@@ -1,5 +1,13 @@
 #!/bin/zsh
 
+# Enable nvm in the current shell.
+# Loading nvm by default is slow, and most of the time we don't need it.
+loadnvm() {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+}
+
 function vcmp() {
 	ffmpeg -hwaccel auto -dn -an -i "$1" -vcodec libx264 -pix_fmt yuv420p -profile:v baseline -r 24 "$2"
 }
@@ -35,3 +43,9 @@ function google() {
 
 	open "$url"
 }
+
+# Find out what's running on a given port
+whatsonport() {
+    lsof -i tcp:$1
+}
+

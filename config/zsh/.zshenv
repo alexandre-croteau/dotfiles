@@ -1,8 +1,7 @@
-export AWS_DEFAULT_REGION=ca-central-1
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export EDITOR="nvim"
 
 export CURL_HOME="$CONFIG/curl"
 
@@ -18,7 +17,7 @@ export NVIM_APPNAME="lazyvim"
 export HISTFILE=$CACHE/.zsh_history
 export HIST_STAMPS="yyyy.mm.dd"
 
-export EDITOR="nvim"
+export dev="$DEVELOPMENT"
 
 # export NODE_REPL_HISTORY=""
 # export NODE_REPL_MODE="sloppy"
@@ -44,20 +43,4 @@ export EDITOR="nvim"
 # export DOCKER_CONFIG="$LIB/docker"
 # export DENO_INSTALL="$LIB/deno"
 
-# export PATH="$BIN:$PATH"
-
-alias g="git"
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
-# alias nv="neovide"
-# alias cat="bat"
-# alias ccat="/bin/cat"
-alias resource="source \$HOME/.zshrc"
-alias ls="ls -phlaFHAt --color=auto"
-alias ll="eza --long --header --icons --all"
-alias mkdir='mkdir -p'
-# alias rg='ranger'
-# alias sudo='sudo -E'
-
-export dev="$DEVELOPMENT"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
