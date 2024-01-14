@@ -8,4 +8,6 @@ function Open-Neovim([string]$FileName) { & nvim $FileName }
 New-Alias -Name "vi" -Value "Open-Neovim" -Description "neovim" -Option ReadOnly -Force
 New-Alias -Name "vim" -Value "Open-Neovim" -Description "neovim" -Option ReadOnly -Force
 
-Import-Module posh-git
+if ($IsWindows) {
+  Import-Module posh-git
+}
