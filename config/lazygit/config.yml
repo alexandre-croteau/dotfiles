@@ -2,6 +2,11 @@ gui:
   windowSize: 'normal' # one of 'normal' | 'half' | 'full' default is 'normal'
   nerdFontsVersion: "3" # 2 or 3
   skipDiscardChangeWarning: true
+  theme:
+    selectedLineBgColor:
+      - default
+    selectedRangeBgColor:
+      - default
 git:
   paging:
     colorArg: always
