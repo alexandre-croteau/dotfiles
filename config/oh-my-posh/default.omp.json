@@ -140,8 +140,8 @@
           "background": "p:dark-background",
           "properties": {
             "mapped_shell_names": {
-              "pwsh": "\uebc7",
-              "zsh": "\uf179"
+              "pwsh": "\uebc7 ",
+              "zsh": "\uf179 "
             }
           }
         },
@@ -156,8 +156,9 @@
             "style": "agnoster_short",
             "hide_root_location": false,
             "max_depth": 2,
+            "home_icon": "\uf015",
             "folder_icon": "\uf07c",
-            "folder_separator_icon": "\ue0bb"
+            "folder_separator_icon": " \ue0bb "
           }
         },
         {
@@ -190,11 +191,10 @@
         {
           "type": "root",
           "style": "powerline",
-          "powerline_symbol": "\ue0b0",
+          "powerline_symbol": "\ue0b4",
           "foreground": "p:foreground",
-          "background": "p:imperial-red",
-          "template": " \uf071 ",
-          "properties": {}
+          "background": "p:color9",
+          "template": " \uf071 "
         },
         {
           "type": "text",
@@ -202,7 +202,7 @@
           "foreground": "p:foreground",
           "background": "p:color8",
           "background_templates": [
-            "{{ if gt .Code 0 }}p:color9{{ end }}"
+            "{{ if gt .Code 0 }}p:color17{{ end }}"
           ],
           "trailing_diamond": "\ue0b4",
           "template": " {{ if eq .Code 0 }}\uf164{{else}}\uf165{{ end }} ",
@@ -216,7 +216,7 @@
   "transient_prompt": {
     "foreground": "p:light-foreground",
     "foreground_templates": [
-      "{{ if gt .Code 0 }}p:color9{{ end }}"
+      "{{ if gt .Code 0 }}p:color17{{ end }}"
     ],
     "background": "transparent",
     "template": "{{ .Shell }} \uf178 "

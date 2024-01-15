@@ -1,4 +1,4 @@
-oh-my-posh init pwsh --config "../oh-my-posh/default.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:USERPROFILE/.dotfiles/config/oh-my-posh/default.omp.json" | Invoke-Expression
 
 function Open-Eza { & eza --long --header --icons --all }
 New-Alias -Name "la" -Value "Open-Eza" -Description "eza aka exa" -Option ReadOnly -Force
