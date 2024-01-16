@@ -3,10 +3,29 @@ gui:
   nerdFontsVersion: "3" # 2 or 3
   skipDiscardChangeWarning: true
   theme:
+    activeBorderColor:
+      - '#C8C093'
+      - bold
+    inactiveBorderColor:
+      - '#836f4a'
+    searchingActiveBorderColor:
+      - '#EEC843'
+      - bold
+    optionsTextColor:
+      - '#4d699b'
     selectedLineBgColor:
-      - default
+      - '#545464'
+      - bold
     selectedRangeBgColor:
-      - default
+      - '#545464'
+    cherryPickedCommitBgColor:
+      - '#4d699b'
+    cherryPickedCommitFgColor:
+      - '#6693bf'
+    unstagedChangesColor:
+      - '#c84053'
+    defaultFgColor:
+      - '#DCD7BA'
 git:
   paging:
     colorArg: always
