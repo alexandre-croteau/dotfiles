@@ -36,6 +36,12 @@ if [ -x "$(command -v nvim)" ]; then
   alias vim="nvim"
 fi
 
+# use lazygit if available
+if [ -x "$(command -v lazygit)" ]; then
+  alias laz="lazygit"
+  alias lazy="lazygit"
+fi
+
 #------------------------------------------------------
 # Load specific config
 #------------------------------------------------------
