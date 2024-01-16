@@ -19,3 +19,18 @@ keymap.set("n", "va", "<esc>ggVG", opts)
 
 -- Add a line bellow without put cursor down
 keymap.set("n", "<leader>o", "printf('m`%so<ESC>``', v:count2)", opts)
+
+-- Github Copilot
+--keymap.set("i", "<Tab>", function()
+--  local cmp = require("cmp")
+--  if cmp.visible() then
+--    cmp.select_next_item()
+--  else
+--    local copilot_keys = vim.fn["copilot#Accept"]()
+--    if copilot_keys ~= "" then
+--      vim.api.nvim_feedkeys(copilot_keys, "i", true)
+--    else
+--      --fallback()
+--    end
+--  end
+--end, { desc = "Copilot tab completion", noremap = true, silent = true })
