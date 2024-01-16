@@ -200,7 +200,7 @@
           "type": "text",
           "style": "diamond",
           "foreground": "p:foreground",
-          "background": "p:color8",
+          "background": "p:background",
           "background_templates": [
             "{{ if gt .Code 0 }}p:color17{{ end }}"
           ],
