@@ -156,9 +156,6 @@ install_dotconfig() {
 
 	SYM_BASE="$dotfiles_root/config"
 
-	mv "$HOME/.zshrc" "$HOME/.zshrc.old"
-	ln -sf "$dotfiles_root/.zshrc" "$HOME/.zshrc"
-
 	for item in $SYM_BASE/{*,.*}; do
 		item_name=${item//$SYM_BASE\//}
 
