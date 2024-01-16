@@ -151,11 +151,11 @@
           "powerline_symbol": "",
           "foreground": "p:dark-foreground",
           "background": "p:dark-background",
-          "template": "{{ if not .Error }}{{ .Icon }}{{ if not (eq \"Charging\" .State.String) }}->{{ .Percentage }}%{{ end }} {{ end }}",
+          "template": "{{ if not .Error }}{{ .Icon }}{{ if (eq \"Discharging\" .State.String ) }}{{ .Percentage }}%{{ end }} {{ end }}",
           "properties": {
-            "discharging_icon": "\udb80\udc7e",
-            "charging_icon": "\udb80\udc84",
-            "charged_icon": "\udb80\udc79"
+            "discharging_icon": "\udb84\udea2",
+            "charging_icon": "\udb84\udea5",
+            "charged_icon": "\udb84\udea6"
           }
         },
         {
