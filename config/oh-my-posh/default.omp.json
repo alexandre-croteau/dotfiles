@@ -140,9 +140,22 @@
           "background": "p:dark-background",
           "properties": {
             "mapped_shell_names": {
-              "pwsh": "\uebc7 ",
-              "zsh": "\uf179 "
+              "pwsh": "\uebc7",
+              "zsh": "\uf179"
             }
+          }
+        },
+        {
+          "type": "battery",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "p:dark-foreground",
+          "background": "p:dark-background",
+          "template": "{{ if not .Error }}{{ .Icon }}{{ if not (eq \"Charging\" .State.String) }}->{{ .Percentage }}%{{ end }} {{ end }}",
+          "properties": {
+            "discharging_icon": "\udb80\udc7e",
+            "charging_icon": "\udb80\udc84",
+            "charged_icon": "\udb80\udc79"
           }
         },
         {
