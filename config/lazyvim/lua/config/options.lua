@@ -9,8 +9,6 @@
 
 -- https://code.visualstudio.com/docs/languages/identifiers#_known-language-identifiers
 vim.g.copilot_filetypes = {
-  ["*"] = false,
+  ["*"] = true,
   ["plaintext"] = false,
-  ["markdown"] = true,
-  ["lua"] = true,
 }
