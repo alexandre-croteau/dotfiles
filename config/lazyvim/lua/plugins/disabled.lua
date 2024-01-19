@@ -1,3 +1,3 @@
 return {
-  -- { "LuaSnip", enabled = false },
+  { "LuaSnip", enabled = false },
 }
