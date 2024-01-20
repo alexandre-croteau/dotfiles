@@ -33,3 +33,9 @@ git:
 os:
   editInTerminal: true
   editPreset: 'vscode' # vscode, nvim
+keybinding:
+  universal:
+    nextTab: '<Right>'
+    prevTab: '<Left>'
+    prevBlock: ''
+    nextBlock: ''
