@@ -1,8 +1,9 @@
 return {
   {
     "github/copilot.vim",
-    name = "copilot",
+    name = "copilot.vim",
     lazy = false,
+    enabled = false,
     --     keys = {
     --       {
     --         "<Tab>",
@@ -15,5 +16,19 @@ return {
     --         expr = true,
     --       },
     --     },
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    name = "copilot.lua",
+    lazy = false,
+    enabled = true,
+    cmd = "Copilot",
+    event = "InsertEnter",
+    opts = {
+      filetypes = {
+        ["*"] = true,
+        plaintext = false,
+      },
+    },
   },
 }
