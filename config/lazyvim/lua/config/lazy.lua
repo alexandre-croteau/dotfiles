@@ -30,7 +30,7 @@ require("lazy").setup({
     colorscheme = { "tokyonight-day" },
   },
   checker = {
-    enabled = true -- automatically check for plugin updates
+    enabled = false, -- automatically check for plugin updates
   },
   change_detection = {
     notify = true,
