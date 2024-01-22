@@ -1,30 +1,28 @@
 gui:
-  windowSize: 'normal' # one of 'normal' | 'half' | 'full' default is 'normal'
+  windowSize: "normal" # one of 'normal' | 'half' | 'full' default is 'normal'
   nerdFontsVersion: "3" # 2 or 3
   skipDiscardChangeWarning: true
   theme:
     activeBorderColor:
-      - '#c5c9c5'
+      - "#c5c9c5"
       - bold
     inactiveBorderColor:
-      - '#43436c'
+      - "#43436c"
     searchingActiveBorderColor:
-      - '#EEC843'
+      - "#EEC843"
       - bold
     optionsTextColor:
-      - '#E6C384'
+      - "#E6C384"
     selectedLineBgColor:
-      - '#363646'
-    selectedRangeBgColor:
-      - '#c5c9c5'
+      - "#363646"
     cherryPickedCommitBgColor:
-      - '#EEC843'
+      - "#EEC843"
     cherryPickedCommitFgColor:
-      - '#545464'
+      - "#545464"
     unstagedChangesColor:
-      - '#e82424'
+      - "#e82424"
     defaultFgColor:
-      - '#938AA9'
+      - "#938AA9"
 git:
   paging:
     colorArg: always
@@ -32,10 +30,11 @@ git:
     useConfig: false
 os:
   editInTerminal: true
-  editPreset: 'vscode' # vscode, nvim
+  editPreset: "vscode" # vscode, nvim
 keybinding:
   universal:
-    nextTab: '<Right>'
-    prevTab: '<Left>'
-    prevBlock: ''
-    nextBlock: ''
+    togglePanel: "<tab>"
+    nextTab: "<Right>"
+    prevTab: "<Left>"
+    prevBlock: ""
+    nextBlock: ""
