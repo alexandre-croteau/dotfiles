@@ -4,13 +4,17 @@ return {
     name = "kanagawa",
   },
   {
+    "olimorris/onedarkpro.nvim",
+    name = "onedarkpro",
+  },
+  {
     "catppuccin/nvim",
     name = "catppuccin",
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa-dragon", --"catppuccin-mocha",
+      colorscheme = "kanagawa",
     },
   },
 }
