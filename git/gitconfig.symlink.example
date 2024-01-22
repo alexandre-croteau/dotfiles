@@ -1,91 +1,76 @@
 [user]
-        name = GIT_AUTHORNAME
         email = GIT_AUTHOREMAIL
+        name = GIT_AUTHORNAME
         signingkey = GIT_SIGNINGKEY
-[hub]
-        protocol = https
 [alias]
+        br = branch
         c = commit -v
         co = checkout
         cob = checkout -b
-        s = status
-        br = branch
+        cp = cherry-pick
         d = diff
         dd = diff --cached
         l = log --oneline --graph
         lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
-        cp = cherry-pick
-        ps = push
-        pl = pull
         pb = pull --rebase
+        pl = pull
+        ps = push
+        s = status
+[apply]
+        whitespace = nowarn
+[branch]
+        autoSetupRemote = true
 [color]
+        branch = auto
         diff = auto
         status = auto
-        branch = auto
         ui = true
 [commit]
         gpgsign = true
 [core]
-        excludesfile = ~/.gitignore
         editor = code --wait
+        excludesfile = ~/.gitignore
         pager = delta
-[interactive]
-        diffFilter = delta --color-only
+[credential]
+        helper = manager
+[credential "https://ghcr.io"]
+        provider = github
 [delta]
-        navigate = true         # use n and N to move between diff sections
-        dark = true             # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-        line-numbers = true     # display line numbers
-[filter "lfs"]
-        clean = git-lfs clean -- %f
-        smudge = git-lfs smudge -- %f
-        process = git-lfs filter-process
-        required = true
-[apply]
-        whitespace = nowarn
-[merge]
-        tool = vscode
-        conflictstyle = diff3
-[mergetool]
-        keepBackup = false
-[mergetool "vscode"]
-        cmd = code --wait $MERGED
+        dark = true
+        line-numbers = true
+        navigate = true
 [diff]
-        tool = vscode
         colorMoved = default
+        tool = vscode
 [difftool]
         prompt = false
 [difftool "vscode"]
         cmd = code --wait --diff $LOCAL $REMOTE
+[filter "lfs"]
+        clean = git-lfs clean -- %f
+        process = git-lfs filter-process
+        required = true
+        smudge = git-lfs smudge -- %f
+[help]
+        autocorrect = 1
+[hub]
+        protocol = https
+[init]
+        defaultBranch = main
+[interactive]
+        diffFilter = delta --color-only
+[merge]
+        conflictstyle = diff3
+        tool = vscode
+[mergetool]
+        keepBackup = false
+[mergetool "vscode"]
+        cmd = code --wait $MERGED
 [pull]
-  rebase = true
+        rebase = true
 [push]
-        # See `git help config` (search for push.default)
-        # for more information on different options of the below setting.
-        #
-        # Setting to git 2.0 default to suppress warning message
         default = simple
-        autoSetupRemote = true
 [rebase]
         autoStash = true
 [remote "origin"]
         prune = true
-[credential "https://ghcr.io"]
-        provider = github
-[init]
-        defaultBranch = main
-[help]
-        Tautocorrect = 1
-[credential]
-	helper = 
-	helper = /usr/local/share/gcm-core/git-credential-manager
-[credential "https://dev.azure.com"]
-	useHttpPath = true
-[hub]
-        protocol = https
-[alias]
-        # co = checkout
-        # promote = !$ZSH/bin/git-promote
-        # wtf     = !$ZSH/bin/git-wtf
-        # rank-contributors = !$ZSH/bin/git-rank-contributors
-        # count   = !git shortlog -sn
-        lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
