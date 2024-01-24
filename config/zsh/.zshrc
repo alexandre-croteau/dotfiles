@@ -24,7 +24,7 @@ alias g="git"
 
 # use eza if available
 if [ -x "$(command -v nvim)" ]; then
-  alias ll="eza --long --header --icons --all --sort=name --hyperlink --git-ignore"
+  alias ll="eza --long --header --icons --all --sort=name --hyperlink"
 else
   alias ll="ls -phlaFHAt --color=auto"
 fi
