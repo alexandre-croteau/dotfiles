@@ -27,7 +27,7 @@ require("lazy").setup({
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
   install = {
-    -- colorscheme = { "tokyonight-day" },
+    colorscheme = { "tokyonight-day" },
   },
   checker = {
     enabled = false, -- automatically check for plugin updates
@@ -36,17 +36,20 @@ require("lazy").setup({
     notify = true,
   },
   performance = {
+    -- reset_packpath = true, -- reset the package path to improve startup time
     rtp = {
+      -- reset = true, -- reset the runtime path to $VIMRUNTIME and your config directory
+      -- paths = { vim.fn.stdpath("data") .. "/lazy/kanagawa" },
       -- disable some rtp plugins
       disabled_plugins = {
-        "gzip",
-        "matchit",
-        "matchparen",
-        "netrwPlugin",
-        "tarPlugin",
-        "tohtml",
-        "tutor",
-        "zipPlugin",
+        -- "gzip",
+        -- "matchit",
+        -- "matchparen",
+        -- "netrwPlugin",
+        -- "tarPlugin",
+        -- "tohtml",
+        -- "tutor",
+        -- "zipPlugin",
       },
     },
   },
