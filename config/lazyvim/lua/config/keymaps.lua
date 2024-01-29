@@ -7,7 +7,7 @@ local opts = { noremap = true, silent = true }
 -- Delete with x does not copy to clipboard
 keymap.set("n", "x", '"_x')
 -- Open neo tree (sidepart files)
-keymap.set("n", "<C-n>", ":Neotree<cr>", opts)
+keymap.set("n", "<C-e>", ":Neotree<cr>", opts)
 -- Keep just current buffer opened
 keymap.set("n", "<leader>to", ":BufferLineCloseOthers<cr>", opts)
 -- Adding a new tab (file)
