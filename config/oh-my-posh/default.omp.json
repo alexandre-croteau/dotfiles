@@ -151,7 +151,7 @@
           "powerline_symbol": "",
           "foreground": "p:dark-foreground",
           "background": "p:dark-background",
-          "template": "{{ if not .Error }}{{ if (eq \"Discharging\" .State.String )}}->{{ .Icon }}<-{{ .Percentage }}%{{ end }}{{ end }}",
+          "template": "{{ if not .Error }}{{ if (eq \"Discharging\" .State.String )}}{{ .Icon }}{{ .Percentage }}%{{ end }}{{ end }}",
           "properties": {
             "discharging_icon": "\udb84\udea2",
             "charging_icon": "\udb84\udea5",
