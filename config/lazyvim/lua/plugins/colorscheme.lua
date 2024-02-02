@@ -1,5 +1,12 @@
 return {
   {
+    "uloco/bluloco.nvim",
+    name = "bluloco",
+    dependencies = {
+      "rktjmp/lush.nvim",
+    },
+  },
+  {
     "rebelot/kanagawa.nvim",
     name = "kanagawa",
   },
@@ -14,7 +21,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa",
+      colorscheme = "bluloco",
     },
   },
 }
