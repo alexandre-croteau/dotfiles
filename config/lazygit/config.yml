@@ -4,25 +4,25 @@ gui:
   skipDiscardChangeWarning: true
   theme:
     activeBorderColor:
-      - "#c5c9c5"
+      - "#f9c859"
       - bold
     inactiveBorderColor:
-      - "#43436c"
+      - "#3476ff"
     searchingActiveBorderColor:
       - "#EEC843"
       - bold
     optionsTextColor:
-      - "#E6C384"
+      - "#5fb9bc"
     selectedLineBgColor:
-      - "#363646"
+      - "#41444d"
     cherryPickedCommitBgColor:
-      - "#EEC843"
+      - "#4483aa"
     cherryPickedCommitFgColor:
-      - "#545464"
+      - "#f9c859"
     unstagedChangesColor:
-      - "#e82424"
+      - "#fc2f52"
     defaultFgColor:
-      - "#938AA9"
+      - "#cdd4e0"
 git:
   paging:
     colorArg: always
