@@ -84,7 +84,7 @@
         "git-background-delete": "#ff6480",
         "git-background-ahead": "#ff78f8",
         "text-background-error": "#fc2f52",
-        "transient-foreground": "#7a82da",
+        "transient-foreground": "#41444d",
         "transient-foreground-error": "#fc2f52",
         "color0": "#41444d",
         "color1": "#fc2f52",
