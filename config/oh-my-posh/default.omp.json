@@ -85,7 +85,7 @@
         "git-background-delete": "#ff6480",
         "git-background-ahead": "#ff78f8",
         "text-background-error": "#fc2f52",
-        "transient-foreground": "#41444d",
+        "transient-foreground": "#8f9aae",
         "transient-foreground-error": "#fc2f52",
         "color0": "#41444d",
         "color1": "#fc2f52",
@@ -203,11 +203,11 @@
       "{{ if gt .Code 0 }}p:transient-foreground-error{{ end }}"
     ],
     "background": "transparent",
-    "template": "{{ .Shell }} \uf178 "
+    "template": "{{ .Shell }}\ue621 "
   },
   "secondary_prompt": {
     "background": "transparent",
     "foreground": "p:transient-foreground",
-    "template": "\uf061 "
+    "template": "\ue621 "
   }
 }
