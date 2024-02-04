@@ -1,3 +1,0 @@
-return {
-  { "LuaSnip", enabled = false },
-}
