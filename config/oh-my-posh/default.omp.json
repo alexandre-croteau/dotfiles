@@ -203,7 +203,8 @@
       "{{ if gt .Code 0 }}p:transient-foreground-error{{ end }}"
     ],
     "background": "transparent",
-    "template": "{{ .Shell }}\ue621 "
+    "template": "{{ .Shell }}\ue621\udb81\udfb7 ",
+    "filler": "\uf45b"
   },
   "secondary_prompt": {
     "background": "transparent",
