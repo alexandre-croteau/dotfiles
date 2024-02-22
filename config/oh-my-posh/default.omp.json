@@ -195,6 +195,18 @@
           }
         }
       ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "template": "\udb81\udfb7"
+        }
+      ]
     }
   ],
   "transient_prompt": {
@@ -203,7 +215,7 @@
       "{{ if gt .Code 0 }}p:transient-foreground-error{{ end }}"
     ],
     "background": "transparent",
-    "template": "{{ .Shell }}\ue621\udb81\udfb7 "
+    "template": "{{ .Shell }}\ue621"
   },
   "secondary_prompt": {
     "background": "transparent",
