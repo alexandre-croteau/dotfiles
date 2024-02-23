@@ -84,9 +84,10 @@
         "git-background-change": "#f9c859",
         "git-background-delete": "#ff6480",
         "git-background-ahead": "#ff78f8",
-        "text-background-error": "#fc2f52",
+        "text-foreground-error": "#41444d",
+        "text-background-error": "#ff6480",
         "transient-foreground": "#8f9aae",
-        "transient-foreground-error": "#fc2f52",
+        "transient-foreground-error": "#ff6480",
         "color0": "#41444d",
         "color1": "#fc2f52",
         "color2": "#25a45c",
@@ -128,13 +129,13 @@
           "type": "battery",
           "style": "powerline",
           "powerline_symbol": "",
-          "foreground": "p:foreground",
+          "foreground": "p:transient-foreground",
           "background": "p:background",
-          "template": "{{ if not .Error }}{{ if (eq \"Discharging\" .State.String )}}{{ .Icon }}{{ .Percentage }}%{{ end }}{{ end }}",
+          "template": "{{ if not .Error }}{{ if (eq \"Discharging\" .State.String )}}{{ .Icon }}{{ .Percentage }}% {{ end }}{{ end }}",
           "properties": {
-            "discharging_icon": "\udb84\udea2",
-            "charging_icon": "\udb84\udea5",
-            "charged_icon": "\udb84\udea6"
+            "discharging_icon": "\u2800\udb84\udea2",
+            "charging_icon": "\u2800\udb84\udea5",
+            "charged_icon": "\u2800\udb84\udea6"
           }
         },
         {
@@ -148,9 +149,16 @@
             "style": "agnoster_short",
             "hide_root_location": false,
             "max_depth": 2,
-            "home_icon": "\uf015",
-            "folder_icon": "\uf07c",
-            "folder_separator_icon": " \ue0bb "
+            "home_icon": "\uf4e2",
+            "folder_icon": "\ue6ad",
+            "folder_separator_icon": " \ue0bb ",
+            "cycle": [
+              "#f9c859",
+              "#f9c859",
+              "#f9c859",
+              "#ff936a"
+            ],
+            "cycle_folder_separator": true
           }
         },
         {
@@ -183,13 +191,16 @@
         {
           "type": "text",
           "style": "diamond",
-          "foreground": "p:foreground",
+          "foreground": "p:transient-foreground",
           "background": "p:background",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}p:text-foreground-error{{ end }}"
+          ],
           "background_templates": [
             "{{ if gt .Code 0 }}p:text-background-error{{ end }}"
           ],
           "trailing_diamond": "\ue0b4",
-          "template": " {{ if eq .Code 0 }}\uf164{{else}}\uf165{{ end }} ",
+          "template": " {{ if eq .Code 0 }}\uf4b5{{else}}\uf46f{{ end }} ",
           "properties": {
             "always_enabled": true
           }
@@ -204,7 +215,7 @@
         {
           "type": "text",
           "style": "plain",
-          "template": "\udb81\udfb7"
+          "template": "\uf4b5"
         }
       ]
     }
@@ -220,6 +231,6 @@
   "secondary_prompt": {
     "background": "transparent",
     "foreground": "p:transient-foreground",
-    "template": "\ue621 "
+    "template": "\ue621"
   }
 }
