@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-export DEVELOPMENT="$HOME/dev"
+export DEVELOPMENT="$HOME/code"
 export CONFIG="$HOME/.config"
 export CACHE="$HOME/.cache"
 
