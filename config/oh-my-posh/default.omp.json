@@ -191,8 +191,8 @@
         {
           "type": "text",
           "style": "diamond",
-          "foreground": "p:transient-foreground",
-          "background": "p:background",
+          "foreground": "p:color0",
+          "background": "p:color10",
           "foreground_templates": [
             "{{ if gt .Code 0 }}p:text-foreground-error{{ end }}"
           ],
@@ -214,6 +214,7 @@
       "segments": [
         {
           "type": "text",
+          "foreground": "p:color11",
           "style": "plain",
           "template": "\uf4b5"
         }
