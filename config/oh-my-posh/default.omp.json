@@ -120,8 +120,9 @@
           "background": "p:background",
           "properties": {
             "mapped_shell_names": {
-              "pwsh": "\udb82\ude0a",
-              "zsh": "\uf179"
+              "pwsh": "pwsh \udb82\ude0a",
+              "zsh": "zsh \uf179",
+              "nu": "nu \udb80\udd6c"
             }
           }
         },
