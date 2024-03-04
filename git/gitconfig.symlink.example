@@ -1,3 +1,5 @@
+[include]
+        path = ~/.config/delta/themes.gitconfig
 [user]
         email = GIT_AUTHOREMAIL
         name = GIT_AUTHORNAME
@@ -36,9 +38,8 @@
 [credential "https://ghcr.io"]
         provider = github
 [delta]
+        features = bluloco
         dark = true
-        line-numbers = true
-        navigate = true
 [diff]
         colorMoved = default
         tool = vscode
@@ -60,8 +61,8 @@
 [interactive]
         diffFilter = delta --color-only
 [merge]
-        conflictstyle = diff3
         tool = vscode
+        conflictstyle = diff3
 [mergetool]
         keepBackup = false
 [mergetool "vscode"]
