@@ -22,7 +22,7 @@ gui:
     unstagedChangesColor:
       - "#fc2f52"
     defaultFgColor:
-      - "#cdd4e0"
+      - "#3476ff"
 git:
   paging:
     colorArg: always

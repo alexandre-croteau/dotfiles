@@ -30,7 +30,7 @@
     line-numbers-plus-style = bluloco.green bold
     line-numbers-right-format = "{np:>1}┊"
     line-numbers-right-style = bluloco.green
-    line-numbers-zero-style = bluloco.lite-grey dim
+    line-numbers-zero-style = bluloco.grey dim
     minus-emph-style = bluloco.yellow reverse bluloco.red
     minus-style = bluloco.yellow bluloco.red
     minus-empty-line-marker-style = bluloco.yellow bluloco.red
