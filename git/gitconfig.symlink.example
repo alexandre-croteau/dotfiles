@@ -1,5 +1,5 @@
 [include]
-        path = ~/.config/delta/themes.gitconfig
+        path = ~/.dotfiles/config/delta/themes.gitconfig
 [user]
         email = GIT_AUTHOREMAIL
         name = GIT_AUTHORNAME
@@ -29,31 +29,46 @@
         ui = true
 [commit]
         gpgsign = true
+[color]
+        ui = auto
 [core]
         editor = code --wait
-        excludesfile = ~/.gitignore
         pager = delta
 [credential]
+        helper =
+        helper = C:/ProgramData/scoop/apps/git/current/mingw64/bin/git-credential-manager.exe
         helper = manager
+[credential "https://github.com"]
+        username = alexandre-croteau
 [credential "https://ghcr.io"]
         provider = github
+[credential "https://dev.azure.com"]
+        useHttpPath = true
 [delta]
         features = bluloco
         dark = true
 [diff]
-        colorMoved = default
         tool = vscode
+        colorMoved = default
 [difftool]
         prompt = false
 [difftool "vscode"]
         cmd = code --wait --diff $LOCAL $REMOTE
 [filter "lfs"]
-        clean = git-lfs clean -- %f
-        process = git-lfs filter-process
         required = true
+        clean = git-lfs clean -- %f
         smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+[gpg]
+        program = C:\\Users\\u362acro\\scoop\\apps\\gpg4win\\current\\GnuPG\\bin\\gpg.exe
+        # format = x509
+[gpg "x509"]
+        program = smimesign
 [help]
+        format = man
         autocorrect = 1
+[http]
+        sslBackend = schannel
 [hub]
         protocol = https
 [init]
@@ -70,8 +85,14 @@
 [pull]
         rebase = true
 [push]
+        gpgSign = if-asked
+        autoSetupRemote = true
         default = simple
 [rebase]
         autoStash = true
 [remote "origin"]
         prune = true
+[safe]
+        directory = *
+[tag]
+        gpgsign = true
