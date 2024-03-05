@@ -13,8 +13,8 @@
     lite-green = "#3fc56b"
     yellow = "#f9c859"
     pink = "#ff78f8"
-    commit-style = bluloco.yellow bold italic
-    commit-decoration-style = bold box ul "#34fd50"
+    commit-style = bluloco.lite-green italic
+    commit-decoration-style = bluloco.yellow overline ul
     file-decoration-style = bluloco.yellow overline
     file-added-label = ┊
     file-copied-label = ┊
@@ -31,9 +31,9 @@
     line-numbers-right-format = "{np:>1}┊"
     line-numbers-right-style = bluloco.green
     line-numbers-zero-style = bluloco.grey dim
-    minus-emph-style = bluloco.yellow reverse bluloco.red
-    minus-style = bluloco.yellow bluloco.red
-    minus-empty-line-marker-style = bluloco.yellow bluloco.red
+    minus-emph-style = bluloco.yellow bold reverse bluloco.red
+    minus-style = bluloco.yellow bold dim bluloco.red
+    minus-empty-line-marker-style = bluloco.yellow dim bluloco.red
     plus-emph-style = bluloco.yellow bold reverse bluloco.green
     plus-style = bluloco.yellow bold bluloco.green
     plus-empty-line-marker-style = bluloco.yellow bluloco.green
