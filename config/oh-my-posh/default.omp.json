@@ -174,7 +174,7 @@
             "{{ if gt .Ahead 0 }}p:git-background-ahead{{ end }}",
             "{{ if gt .Behind 0 }}p:git-background-change{{ end }}"
           ],
-          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \uf0c7 {{ .StashCount }}{{ end }} ",
           "properties": {
             "fetch_stash_count": true,
             "fetch_status": true,
@@ -228,7 +228,7 @@
       "{{ if gt .Code 0 }}p:transient-foreground-error{{ end }}"
     ],
     "background": "transparent",
-    "template": "{{ .Shell }}\ue621"
+    "template": "{{ .Shell }} \ue621 "
   },
   "secondary_prompt": {
     "background": "transparent",
