@@ -15,3 +15,20 @@ New-Alias -Name "lazy" -Value "Open-Lazygit" -Description "Lazygit" -Option Read
 if ($IsWindows) {
   Import-Module posh-git
 }
+
+# Shows navigable menu of all options when hitting Tab
+Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+
+# PowerShell parameter completion shim for the dotnet CLI
+Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
+    param($wordToComplete, $commandAst, $cursorPosition)
+        dotnet complete --position $cursorPosition "$commandAst" | ForEach-Object {
+            [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+        }
+}
+
+# enable completion for scoop
+Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
+
+# enable completion for gh
+Invoke-Expression -Command $(gh completion -s powershell | Out-String)
