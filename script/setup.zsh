@@ -1,8 +1,7 @@
-#!/bin/bash
+#!/bin/zsh
 
 cd "$(dirname "$0")/.."
-
-dotfiles_root=$(cd -P "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)
+dotfiles_root=$(pwd)
 
 #! [ -d "$dotfiles_root/config/zsh/custom" ] && mkdir -p "$dotfiles_root/config/zsh/custom"
 
@@ -15,7 +14,7 @@ set -e
 echo ''
 
 title() {
-	echo "${bold}==> $1${normal}"
+	echo "${bold}=> $1${normal}"
 	echo
 }
 
@@ -46,7 +45,7 @@ setup_gitconfig() {
 		info 'setup gitconfig'
 
 		git_credential='cache'
-		if [ "$(uname -s)" == "darwin" ]; then
+		if [ "$(uname -s)" = "darwin" ]; then
 			git_credential='osxkeychain'
 		fi
 
@@ -71,11 +70,11 @@ link_file() {
 
 	if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]; then
 
-		if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]; then
+		if [ "$overwrite_all" = "false" ] && [ "$backup_all" = "false" ] && [ "$skip_all" = "false" ]; then
 
 			local currentsrc="$(readlink $dst)"
 
-			if [ "$currentsrc" == "$src" ]; then
+			if [ "$currentsrc" = "$src" ]; then
 
 				skip=true
 
@@ -115,17 +114,17 @@ link_file() {
 		backup=${backup:-$backup_all}
 		skip=${skip:-$skip_all}
 
-		if [ "$overwrite" == "true" ]; then
+		if [ "$overwrite" = "true" ]; then
 			rm -rf "$dst"
 			success "removed $dst"
 		fi
 
-		if [ "$backup" == "true" ]; then
+		if [ "$backup" = "true" ]; then
 			mv "$dst" "${dst}.backup"
 			success "moved $dst to ${dst}.backup"
 		fi
 
-		if [ "$skip" == "true" ]; then
+		if [ "$skip" = "true" ]; then
 			success "skipped $src"
 		fi
 	fi
@@ -209,9 +208,9 @@ install_dotconfig() {
 install_deps() {
 
 	# Set macOS defaults
-	if [ "$(uname -s)" == "Darwin" ]; then
+	if [ "$(uname -s)" = "Darwin" ]; then
 		echo "› Applying macOS defaults..."
-		$dotfiles_root/macos/set-defaults.sh
+		sh -c "${dotfiles_root}/macos/set-defaults.sh"
 	fi
 
 	# Install software
@@ -220,7 +219,6 @@ install_deps() {
 	find . -name install.sh | while read installer; do
 		sh -c "${installer}"
 	done
-
 }
 
 # 1. Setup git
