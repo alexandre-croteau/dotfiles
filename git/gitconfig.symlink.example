@@ -1,5 +1,3 @@
-[include]
-        path = ~/.dotfiles/config/delta/themes.gitconfig
 [user]
         email = GIT_AUTHOREMAIL
         name = GIT_AUTHORNAME
@@ -18,10 +16,6 @@
         pl = pull
         ps = push
         s = status
-[apply]
-        whitespace = nowarn
-[branch]
-        autoSetupRemote = true
 [color]
         branch = auto
         diff = auto
@@ -36,7 +30,6 @@
         pager = delta
 [credential]
         helper =
-        helper = C:/ProgramData/scoop/apps/git/current/mingw64/bin/git-credential-manager.exe
         helper = manager
 [credential "https://github.com"]
         username = alexandre-croteau
@@ -60,17 +53,14 @@
         smudge = git-lfs smudge -- %f
         process = git-lfs filter-process
 [gpg]
-        program = C:\\Users\\u362acro\\scoop\\apps\\gpg4win\\current\\GnuPG\\bin\\gpg.exe
-        # format = x509
-[gpg "x509"]
-        program = smimesign
+        program = gpg
 [help]
         format = man
         autocorrect = 1
-[http]
-        sslBackend = schannel
 [hub]
         protocol = https
+[include]
+        path = ~/.dotfiles/config/delta/themes.gitconfig
 [init]
         defaultBranch = main
 [interactive]
@@ -88,6 +78,7 @@
         gpgSign = if-asked
         autoSetupRemote = true
         default = simple
+        autoSetupRemote = true
 [rebase]
         autoStash = true
 [remote "origin"]
