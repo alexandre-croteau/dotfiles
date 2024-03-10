@@ -26,8 +26,8 @@
     line-numbers = true
     line-numbers-left-format = "{nm:>1}┊"
     line-numbers-left-style = bluloco.red
-    line-numbers-minus-style = bluloco.red bold
-    line-numbers-plus-style = bluloco.green bold
+    line-numbers-minus-style = bluloco.red
+    line-numbers-plus-style = bluloco.green
     line-numbers-right-format = "{np:>1}┊"
     line-numbers-right-style = bluloco.green
     line-numbers-zero-style = bluloco.grey dim
