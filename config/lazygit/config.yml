@@ -37,6 +37,9 @@ git:
 os:
   editInTerminal: true
   editPreset: "vscode" # vscode, nvim
+refresher:
+    refreshInterval: 10
+    fetchInterval: 60
 keybinding:
   universal:
     togglePanel: "<tab>"
