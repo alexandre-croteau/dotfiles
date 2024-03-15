@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "version": 2,
   "final_space": true,
-  "console_title_template": "{{.Folder}}{{if .Root}} :: root{{end}} :: {{.Shell}}",
+  "console_title_template": "{{.Folder}}{{if .Root}} ┊ root{{end}} ┊ {{.Shell}}",
   "palettes": {
     "template": "Bluloco",
     "list": {
@@ -151,8 +151,8 @@
             "hide_root_location": false,
             "max_depth": 2,
             "home_icon": "\uf4e2",
-            "folder_icon": "\ue6ad",
-            "folder_separator_icon": " \ue0bb ",
+            "folder_icon": " \ue6ad",
+            "folder_separator_icon": " \ue0bb",
             "cycle": [
               "#f9c859",
               "#f9c859",
@@ -174,7 +174,7 @@
             "{{ if gt .Ahead 0 }}p:git-background-ahead{{ end }}",
             "{{ if gt .Behind 0 }}p:git-background-change{{ end }}"
           ],
-          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \uf0c7 {{ .StashCount }}{{ end }} ",
+          "template": " {{ .UpstreamIcon }} {{ .HEAD }} {{ .BranchStatus }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} ┊{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \uf0c7 {{ .StashCount }}{{ end }} ",
           "properties": {
             "fetch_stash_count": true,
             "fetch_status": true,
