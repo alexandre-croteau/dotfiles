@@ -1,0 +1,102 @@
+prSections:
+  - title: 😎 Involves me
+    filters: is:open involves:@me archived:false draft:false
+  - title: 🔨 My Draft
+    filters: is:open author:@me archived:false draft:true
+  - title: 🔎 Review requests
+    filters: is:open review-requested:@me archived:false
+    layout:
+      author:
+        hidden: false
+  - title: ✏️ Assigned
+    filters: is:open assignee:@me archived:false
+    layout:
+      author:
+        hidden: false
+  - title: 🤖 Renovate
+    filters: is:open author:cascades-cti-renovate[bot] archived:false
+issuesSections:
+  - title: Created
+    filters: is:open author:@me
+  - title: Assigned
+    filters: is:open assignee:@me
+    layout:
+      creator:
+        hidden: false
+  # - title: Subscribed
+  #   filters: is:open -author:@me repo:microsoft/vscode repo:dlvhdr/gh-dash
+defaults:
+  layout:
+    prs:
+      updatedAt:
+        hidden: true
+      repo:
+        width: 25
+        grow: true
+      author:
+        grow: true
+        hidden: true
+      title:
+        grow: true
+      reviewStatus:
+      state:
+      ci:
+      lines:
+        hidden: true
+      assignees:
+        hidden: true
+      base:
+        hidden: true
+    issues:
+      updatedAt:
+      state:
+      repo:
+      title:
+      creator:
+        grow: true
+        hidden: true
+      assignees:
+      comments:
+      reactions:
+  prsLimit: 30 # global limit
+  issuesLimit: 20 # global limit
+  preview:
+    open: true # wether to have the preview pane open by default
+    width: 90 # width in columns
+  refetchIntervalMinutes: 30 # will refetch all sections every 30 minutes
+repoPaths: # configure where to locate repos when checking out PRs
+  # :owner/:repo: ~/code/github.com/:owner/:repo
+  cascades-cti/*: ~/code/github.com/cascades-cti/*
+keybindings:
+  prs:
+    # - key: c
+    #   command: >
+    #     tmux new-window -c {{.RepoPath}} '
+    #       gh pr checkout {{.PrNumber}} &&
+    #       nvim -c ":DiffviewOpen master...{{.HeadRefName}}"
+    #     '
+    - key: v
+      command: >
+        cd {{.RepoPath}} &&
+        code . &&
+        gh pr checkout {{.PrNumber}}
+theme:
+  ui:
+    table:
+      showSeparator: false
+  colors:
+    text:
+      primary: "#8f9aae"
+      secondary: "#3476ff"
+      inverted: "#41444d"
+      faint: "#cdd4e0"
+      warning: "#ff6480"
+      success: "#3fc56b"
+    background:
+      selected: "#41444d"
+    border:
+      primary: "#3476ff"
+      secondary: "#f9c859"
+      faint: "#ff78f8"
+pager:
+  diff: delta

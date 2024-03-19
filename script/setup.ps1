@@ -34,4 +34,7 @@ if ($IsWindows) {
   # https://github.com/jesseduffield/lazygit
   # Move-Item $env:APPDATA\lazygit $env:APPDATA\lazygit.bak -Force
   New-Item -Path "$env:APPDATA\lazygit" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\lazygit" -Force
+
+  ### gh-dash
+  New-Item -Path "$env:USERPROFILE\.config\gh-dash" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\gh-dash" -Force
 }
