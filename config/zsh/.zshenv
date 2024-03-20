@@ -18,6 +18,7 @@ export HISTFILE=$CACHE/.zsh_history
 export HIST_STAMPS="yyyy.mm.dd"
 
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export PATH="$PATH:$HOME/.local/bin" # This add pipx env
 
 export NVM_DIR="$HOME/.nvm"
   [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"  # This loads nvm

@@ -57,6 +57,12 @@ case `uname` in
   ;;
 esac
 
+# Oh-my-posh
+eval "$(oh-my-posh init zsh --config $CONFIG/oh-my-posh/default.omp.json)"
+
+#------------------------------------------------------
+# Completions
+#------------------------------------------------------
 # Homebrew
 if type brew &>/dev/null
 then
@@ -67,5 +73,11 @@ then
   compinit
 fi
 
-# Oh-my-posh
-eval "$(oh-my-posh init zsh --config $CONFIG/oh-my-posh/default.omp.json)"
+# Pipx
+# if type pipx &>/dev/null
+# then
+#   autoload -U bashcompinit
+#   bashcompinit
+
+#   eval "$(register-python-argcomplete pipx)"
+# fi
