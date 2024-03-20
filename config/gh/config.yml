@@ -1,3 +1,5 @@
+# the web browser to use for opening URLs
+browser: firefox
 # What protocol to use when performing git operations. Supported values: ssh, https
 git_protocol: https
 # What editor gh should run when creating issues, pull requests, etc. If blank, will refer to environment.
@@ -5,7 +7,7 @@ editor: code
 # When to interactively prompt. This is a global config that cannot be overriden by hostname. Supported values: enabled, disabled
 prompt: enabled
 # A pager program to send command output to. Example value: less
-pager:
+pager: delta
 # Aliases allow you to create nicknames for gh commands
 aliases:
     co: pr checkout
