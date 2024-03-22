@@ -22,6 +22,9 @@ alias sudo='sudo -E'
 alias ls="ls -phlaFHAt --color=auto"
 alias g="git"
 
+# GH Copilot
+eval "$(gh copilot alias -- zsh)"
+
 # use eza if available
 if [ -x "$(command -v nvim)" ]; then
   alias ll="eza --long --header --icons --all --sort=name --hyperlink --ignore-glob '.DS_Store|?'"
