@@ -26,9 +26,13 @@ Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
 # enable completion for gh
 Invoke-Expression -Command $(gh completion -s powershell | Out-String)
 
+# Generate shell specific aliases for Copilot in the CLI
+$GH_COPILOT_PROFILE = Join-Path -Path $(Split-Path -Path $PROFILE -Parent) -ChildPath "gh-copilot.ps1"
+. $GH_COPILOT_PROFILE
+
 if ($IsWindows) {
   Import-Module posh-git
 
-# enable completion for scoop
-Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
+  # enable completion for scoop
+  Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
 }
