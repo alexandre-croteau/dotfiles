@@ -1,24 +1,22 @@
 prSections:
-  - title: 😎 Involves me
-    filters: is:open involves:@me archived:false draft:false
-  - title: 🔨 My Draft
-    filters: is:open author:@me archived:false draft:true
-  - title: 🔎 Review requests
+  - title: 🔨 My Work
+    filters: is:open involves:@me archived:false
+  - title: 🔎 To Review
     filters: is:open review-requested:@me archived:false
     layout:
       author:
         hidden: false
-  - title: ✏️ Assigned
-    filters: is:open assignee:@me archived:false
-    layout:
-      author:
-        hidden: false
+  # - title: ✏️ Assigned
+  #   filters: is:open assignee:@me archived:false
+  #   layout:
+  #     author:
+  #       hidden: false
   - title: 🤖 Renovate
     filters: is:open author:cascades-cti-renovate[bot] archived:false
 issuesSections:
-  - title: Created
+  - title: 🐛 Created
     filters: is:open author:@me
-  - title: Assigned
+  - title: 🐞 Assigned
     filters: is:open assignee:@me
     layout:
       creator:
@@ -87,16 +85,16 @@ theme:
   colors:
     text:
       primary: "#8f9aae"
-      secondary: "#3476ff"
+      secondary: "#cdd4e0"
       inverted: "#41444d"
-      faint: "#cdd4e0"
+      faint: "#8f9aae"
       warning: "#ff6480"
-      success: "#3fc56b"
+      success: "#25a45c"
     background:
       selected: "#41444d"
     border:
-      primary: "#3476ff"
-      secondary: "#f9c859"
-      faint: "#ff78f8"
+      primary: "#8f9aae"
+      secondary: "#cdd4e0"
+      faint: "#41444d"
 pager:
   diff: delta
