@@ -85,7 +85,7 @@ theme:
   colors:
     text:
       primary: "#8f9aae"
-      secondary: "#cdd4e0"
+      secondary: "#f9c859"
       inverted: "#41444d"
       faint: "#8f9aae"
       warning: "#ff6480"
@@ -93,7 +93,7 @@ theme:
     background:
       selected: "#41444d"
     border:
-      primary: "#8f9aae"
+      primary: "#7a82da"
       secondary: "#cdd4e0"
       faint: "#41444d"
 pager:
