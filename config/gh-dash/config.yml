@@ -12,7 +12,7 @@ prSections:
   #     author:
   #       hidden: false
   - title: 🤖 Renovate
-    filters: is:open author:cascades-cti-renovate[bot] archived:false
+    filters: is:open author:cascades-renovate[bot] archived:false
 issuesSections:
   - title: 🐛 Created
     filters: is:open author:@me
