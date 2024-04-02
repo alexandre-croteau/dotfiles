@@ -6,13 +6,13 @@ prSections:
     layout:
       author:
         hidden: false
-  # - title: ✏️ Assigned
-  #   filters: is:open assignee:@me archived:false
-  #   layout:
-  #     author:
-  #       hidden: false
-  - title: 🤖 Renovate
-    filters: is:open author:cascades-renovate[bot] archived:false
+  - title: ✏️ Assigned
+    filters: is:open assignee:@me archived:false
+    layout:
+      author:
+        hidden: false
+  - title: 🤖 Dependencies
+    filters: is:open org:cascades-cti author:cascades-renovate[bot] author:dependabot[bot] archived:false
 issuesSections:
   - title: 🐛 Created
     filters: is:open author:@me
@@ -21,8 +21,6 @@ issuesSections:
     layout:
       creator:
         hidden: false
-  # - title: Subscribed
-  #   filters: is:open -author:@me repo:microsoft/vscode repo:dlvhdr/gh-dash
 defaults:
   layout:
     prs:
