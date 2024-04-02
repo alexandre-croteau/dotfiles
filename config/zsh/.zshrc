@@ -27,7 +27,7 @@ eval "$(gh copilot alias -- zsh)"
 
 # use eza if available
 if [ -x "$(command -v nvim)" ]; then
-  alias ll="eza --long --header --icons --all --sort=name --hyperlink --ignore-glob '.DS_Store|?'"
+  alias ll="eza --long --header --icons --all --sort=name --group-directories-first --hyperlink --ignore-glob '.DS_Store|?'"
 else
   alias ll="ls -phlaFHAt --color=auto"
 fi
