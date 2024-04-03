@@ -35,6 +35,10 @@ if ($IsWindows) {
   # Move-Item $env:APPDATA\lazygit $env:APPDATA\lazygit.bak -Force
   New-Item -Path "$env:APPDATA\lazygit" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\lazygit" -Force
 
+  ### Lazydocker
+  # https://github.com/jesseduffield/lazydocker
+  New-Item -Path "$env:APPDATA\lazydocker" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\lazydocker" -Force
+
   ### GitHub Copilot
   $GH_COPILOT_PROFILE = Join-Path -Path $(Split-Path -Path $PROFILE -Parent) -ChildPath "gh-copilot.ps1"
   gh copilot alias -- pwsh | Out-File ( New-Item -Path $GH_COPILOT_PROFILE -Force )

@@ -11,6 +11,11 @@ New-Alias -Name "vim" -Value "Open-Neovim" -Description "Neovim" -Option ReadOnl
 function Open-Lazygit { & lazygit }
 New-Alias -Name "laz" -Value "Open-Lazygit" -Description "Lazygit" -Option ReadOnly -Force
 New-Alias -Name "lazy" -Value "Open-Lazygit" -Description "Lazygit" -Option ReadOnly -Force
+New-Alias -Name "lz" -Value "Open-Lazygit" -Description "Lazygit" -Option ReadOnly -Force
+New-Alias -Name "lg" -Value "Open-Lazygit" -Description "Lazygit" -Option ReadOnly -Force
+
+function Open-Lazydocker { & lazydocker }
+New-Alias -Name "ld" -Value "Open-Lazydocker" -Description "Lazydocker" -Option ReadOnly -Force
 
 # Shows navigable menu of all options when hitting Tab
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete

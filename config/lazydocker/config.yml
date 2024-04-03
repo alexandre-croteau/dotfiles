@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://json.schemastore.org/lazydocker.json
+gui:
+  screenMode: "normal" # one of 'normal' | 'half' | 'fullscreen'
+  theme:
+    activeBorderColor:
+      - "#f9c859"
+      - bold
+    inactiveBorderColor:
+      - "#3476ff"
+    selectedLineBgColor:
+      - "#41444d"
+    optionsTextColor:
+      - "#7a82da"
+stats:
+  graphs:
+    - caption: CPU (%)
+      statPath: DerivedStats.CPUPercentage
+      color: "#3476ff"
+    - caption: Memory (%)
+      statPath: DerivedStats.MemoryPercentage
+      color: "#25a45c"

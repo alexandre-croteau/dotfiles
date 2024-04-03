@@ -42,7 +42,13 @@ fi
 # use lazygit if available
 if [ -x "$(command -v lazygit)" ]; then
   alias laz="lazygit"
-  alias lazy="lazygit"
+  alias lg="lazygit"
+  alias lz="lazygit"
+fi
+
+# use lazygit if available
+if [ -x "$(command -v lazydocker)" ]; then
+  alias ld="lazydocker"
 fi
 
 #------------------------------------------------------
