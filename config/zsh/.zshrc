@@ -72,7 +72,7 @@ eval "$(oh-my-posh init zsh --config $CONFIG/oh-my-posh/default.omp.json)"
 #------------------------------------------------------
 # Completions
 #------------------------------------------------------
-# Homebrew
+# Homebrew 🍺 The missing package manager for macOS (or Linux)
 if type brew &>/dev/null
 then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
@@ -81,6 +81,9 @@ then
   autoload -U compinit
   compinit
 fi
+
+# fzf 🌸 A command-line fuzzy finder
+eval "$(fzf --zsh)"
 
 # Pipx
 # if type pipx &>/dev/null
