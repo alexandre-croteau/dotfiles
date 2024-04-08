@@ -37,7 +37,7 @@ if ($IsWindows) {
 
   ### Lazydocker
   # https://github.com/jesseduffield/lazydocker
-  New-Item -Path "$env:APPDATA\lazydocker" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\lazydocker" -Force
+  New-Item -Path "$env:LOCALAPPDATA\lazydocker" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\lazydocker" -Force
 
   ### GitHub Copilot
   $GH_COPILOT_PROFILE = Join-Path -Path $(Split-Path -Path $PROFILE -Parent) -ChildPath "gh-copilot.ps1"
