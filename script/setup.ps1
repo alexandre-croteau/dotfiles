@@ -33,7 +33,7 @@ if ($IsWindows) {
   ### Lazygit
   # https://github.com/jesseduffield/lazygit
   # Move-Item $env:APPDATA\lazygit $env:APPDATA\lazygit.bak -Force
-  New-Item -Path "$env:APPDATA\lazygit" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\lazygit" -Force
+  New-Item -Path "$env:LOCALAPPDATA\lazygit" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\lazygit" -Force
 
   ### Lazydocker
   # https://github.com/jesseduffield/lazydocker
