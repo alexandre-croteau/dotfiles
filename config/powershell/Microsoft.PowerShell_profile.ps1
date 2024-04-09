@@ -1,6 +1,6 @@
 oh-my-posh init pwsh --config "$env:USERPROFILE/.dotfiles/config/oh-my-posh/default.omp.json" | Invoke-Expression
 
-function Open-Eza { & eza --long --header --icons --all }
+function Open-Eza { & eza --long --header --icons --all --sort=name --group-directories-first --hyperlink --ignore-glob '.DS_Store|?' }
 New-Alias -Name "la" -Value "Open-Eza" -Description "Eza" -Option ReadOnly -Force
 New-Alias -Name "ll" -Value "Open-Eza" -Description "Eza" -Option ReadOnly -Force
 
