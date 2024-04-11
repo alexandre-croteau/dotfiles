@@ -134,9 +134,9 @@
           "background": "p:background",
           "template": "{{ if not .Error }}{{ if (eq \"Discharging\" .State.String )}}{{ .Icon }}{{ .Percentage }}% {{ end }}{{ end }}",
           "properties": {
-            "discharging_icon": "\u2800\udb84\udea2",
-            "charging_icon": "\u2800\udb84\udea5",
-            "charged_icon": "\u2800\udb84\udea6"
+            "discharging_icon": "\udb84\udea2",
+            "charging_icon": "\udb84\udea5",
+            "charged_icon": "\udb84\udea6"
           }
         },
         {
