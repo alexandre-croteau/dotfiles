@@ -35,7 +35,7 @@ git:
     pager: delta --dark --paging=never
     useConfig: false
 os:
-  editInTerminal: true
+  editInTerminal: false
   editPreset: "vscode" # vscode, nvim
 refresher:
     refreshInterval: 10
