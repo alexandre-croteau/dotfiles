@@ -93,3 +93,7 @@ eval "$(fzf --zsh)"
 
 #   eval "$(register-python-argcomplete pipx)"
 # fi
+
+# Google Cloud SDK
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
