@@ -77,6 +77,28 @@ if type brew &>/dev/null
 then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
+  setopt LIST_PACKED
+  setopt AUTO_PARAM_SLASH
+
+  zstyle ':completion:*' use-cache on
+  zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
+
+  # zstyle ':completion:*' completer _extensions _complete _approximate
+  zstyle ':completion:*' menu select # interactive search
+  zstyle ':completion:*' file-sort modification follow
+  zstyle ':completion:*' squeeze-slashes true
+  # zstyle ':completion:*' complete-options true
+  zstyle ':completion:*' group-name ''
+  zstyle ':completion:*:*:-command-:*:*' group-order alias builtins functions commands
+  # zstyle ':completion:*' file-list all
+  # zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+  # zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+  zstyle ':completion:*:*:*:*:descriptions' format '%F{green}-- %d --%f'
+  zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
+  zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
+  zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
+
   _comp_options+=(globdots)
   autoload -U compinit
   compinit

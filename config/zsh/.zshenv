@@ -12,6 +12,8 @@ export ZDOTDIR="$CONFIG/zsh"
 export USER_ZDOTDIR="$ZDOTDIR"
 
 export XDG_CONFIG_HOME="$CONFIG"
+export XDG_CACHE_HOME="$CACHE"
+
 export NVIM_APPNAME="lazyvim"
 
 export HISTFILE=$CACHE/.zsh_history
