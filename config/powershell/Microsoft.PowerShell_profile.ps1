@@ -40,4 +40,7 @@ if ($IsWindows) {
 
   # enable completion for scoop
   Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
+
+  # enable gsudo
+  Import-Module gsudoModule
 }
