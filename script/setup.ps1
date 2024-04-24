@@ -45,4 +45,7 @@ if ($IsWindows) {
 
   ### gh-dash
   New-Item -Path "$env:USERPROFILE\.config\gh-dash" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\gh-dash" -Force
+
+  ### notepad++
+  New-Item -Path "$(scoop prefix notepadplusplus)\shortcuts.xml" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\notepad++\shortcuts.xml" -Force
 }
