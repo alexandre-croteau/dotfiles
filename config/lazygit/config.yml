@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=https://json.schemastore.org/lazygit.json
 notARepository: 'skip'
 gui:
-  windowSize: "normal" # one of 'normal' | 'half' | 'full' default is 'normal'
-  nerdFontsVersion: "3" # 2 or 3
+  windowSize: "normal"
+  nerdFontsVersion: "3"
   skipDiscardChangeWarning: true
   sidePanelWidth: 0.3
   expandFocusedSidePanel: true
@@ -27,9 +27,9 @@ gui:
       - "#fc2f52"
     defaultFgColor:
       - "#3476ff"
-  border: 'rounded' # 'double'
+  border: 'rounded'
   showRandomTip: false
-  showBottomLine: false
+  showBottomLine: true
 git:
   commit:
     autoWrapCommitMessage: true
@@ -42,7 +42,7 @@ git:
   autoRefresh: true
 os:
   editInTerminal: false
-  editPreset: "vscode" # vscode, nvim
+  editPreset: "vscode"
 refresher:
   fetchInterval: 60 # Re-fetch interval in seconds. Auto-fetch can be disabled via option 'git.autoFetch'.
   refreshInterval: 10 # File/submodule refresh interval in seconds. Auto-refresh can be disabled via option 'git.autoRefresh'.
