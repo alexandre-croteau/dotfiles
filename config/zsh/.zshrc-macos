@@ -16,6 +16,11 @@ then
   # Google Cloud SDK
   source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
   source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+
+  # zsh-autosuggestions 🌟 Fish-like autosuggestions for zsh
+  source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=220,bold"
+  ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 fi
 
 setopt LIST_PACKED
