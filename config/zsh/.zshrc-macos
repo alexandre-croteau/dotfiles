@@ -21,6 +21,11 @@ then
   source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=220,bold"
   ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+  HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
+  if [ -f "$HB_CNF_HANDLER" ]; then
+  source "$HB_CNF_HANDLER";
+  fi
 fi
 
 setopt LIST_PACKED
