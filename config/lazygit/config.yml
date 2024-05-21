@@ -1,6 +1,9 @@
 # yaml-language-server: $schema=https://json.schemastore.org/lazygit.json
 notARepository: 'skip'
 gui:
+  spinner:
+      frames: ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏']
+      rate: 100
   windowSize: "normal"
   nerdFontsVersion: "3"
   skipDiscardChangeWarning: true
