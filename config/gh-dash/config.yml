@@ -61,8 +61,7 @@ defaults:
     width: 90 # width in columns
   refetchIntervalMinutes: 30 # will refetch all sections every 30 minutes
 repoPaths: # configure where to locate repos when checking out PRs
-  # :owner/:repo: ~/code/github.com/:owner/:repo
-  cascades-cti/*: ~/code/github.com/cascades-cti/*
+  :owner/:repo: ~/code/github.com/:owner/:repo
 keybindings:
   prs:
     # - key: c
@@ -96,3 +95,4 @@ theme:
       faint: "#41444d"
 pager:
   diff: delta
+
