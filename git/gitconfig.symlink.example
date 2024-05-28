@@ -87,3 +87,5 @@
         directory = *
 [tag]
         gpgsign = true
+[url "https://github.com/cascades-cti"]
+        insteadOf = ssh://git@github.com/cascades-cti
