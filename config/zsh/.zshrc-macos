@@ -27,7 +27,7 @@ then
   source "$HB_CNF_HANDLER";
   fi
 
-  HOMEBREW_NO_ENV_HINTS=1
+  export HOMEBREW_BUNDLE_FILE_GLOBAL="$CONFIG/homebrew/Brewfile"
 fi
 
 setopt LIST_PACKED
