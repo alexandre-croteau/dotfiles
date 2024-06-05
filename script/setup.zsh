@@ -79,28 +79,27 @@ link_file() {
 				skip=true
 
 			else
-
 				user "file already exists: $dst ($(basename "$src")), what do you want to do?\n\
-        [s]kip, [s]kip all, [o]verwrite, [o]verwrite all, [b]ackup, [b]ackup all?"
-				read -n 1 action
+				[s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
+				read -k action
 
 				case "$action" in
 				o)
 					overwrite=true
 					;;
-				o)
+				O)
 					overwrite_all=true
 					;;
 				b)
 					backup=true
 					;;
-				b)
+				B)
 					backup_all=true
 					;;
 				s)
 					skip=true
 					;;
-				s)
+				S)
 					skip_all=true
 					;;
 				*) ;;
