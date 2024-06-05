@@ -48,4 +48,7 @@ if ($IsWindows) {
 
   ### notepad++
   New-Item -Path "$(scoop prefix notepadplusplus)\shortcuts.xml" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\notepad++\shortcuts.xml" -Force
+
+  ### Node Package Manager
+  New-Item -Path "$env:USERPROFILE\.npmrc" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\npm\npmrc.symlink" -Force
 }
