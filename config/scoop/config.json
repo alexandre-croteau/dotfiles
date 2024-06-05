@@ -1,7 +1,8 @@
 {
-  "last_update": "2024-02-06T19:26:09.1346639-05:00",
+  "last_update": "2024-06-05T10:04:00.5493402-04:00",
   "alias": {
     "outdated": "scoop-outdated",
+    "rm": "scoop-rm",
     "upgrade": "scoop-upgrade"
   },
   "use_lessmsi": true,
