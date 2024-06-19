@@ -1,7 +1,7 @@
 if ($IsWindows) {
   ### Powershell
   # https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.4#profile-types-and-locations
-  New-Item -Path $PROFILE -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\powershell\Microsoft.PowerShell_profile.ps1" -Force
+  New-Item -Path $PROFILE.CurrentUserCurrentHost -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\powershell\Microsoft.PowerShell_profile.ps1" -Force
 
   ### Scoop
   # Move-Item $env:USERPROFILE\.config\scoop $env:USERPROFILE\.config\scoop.bak -Force
@@ -40,7 +40,7 @@ if ($IsWindows) {
   New-Item -Path "$env:LOCALAPPDATA\lazydocker" -ItemType SymbolicLink -Value "$env:USERPROFILE\.dotfiles\config\lazydocker" -Force
 
   ### GitHub Copilot
-  $GH_COPILOT_PROFILE = Join-Path -Path $(Split-Path -Path $PROFILE -Parent) -ChildPath "gh-copilot.ps1"
+  $GH_COPILOT_PROFILE = Join-Path -Path $(Split-Path -Path $PROFILE.CurrentUserCurrentHost -Parent) -ChildPath "gh-copilot.ps1"
   gh copilot alias -- pwsh | Out-File ( New-Item -Path $GH_COPILOT_PROFILE -Force )
 
   ### gh-dash
