@@ -1,3 +1,5 @@
+$env:PATH += ";$env:HOME/.dotnet/tools"
+
 oh-my-posh init pwsh --config "$env:USERPROFILE/.dotfiles/config/oh-my-posh/default.omp.json" | Invoke-Expression
 
 function Open-Eza { & eza --long --header --icons --all --sort=name --group-directories-first --hyperlink --ignore-glob '.DS_Store|?' }
