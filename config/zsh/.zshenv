@@ -28,3 +28,5 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
+
+export FZF_DEFAULT_OPTS_FILE="$CONFIG/fzf/fzfrc"

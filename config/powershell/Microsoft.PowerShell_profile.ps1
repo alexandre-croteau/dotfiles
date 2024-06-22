@@ -37,15 +37,6 @@ Invoke-Expression -Command $(gh completion -s powershell | Out-String)
 $GH_COPILOT_PROFILE = Join-Path -Path $(Split-Path -Path $PROFILE -Parent) -ChildPath "gh-copilot.ps1"
 . $GH_COPILOT_PROFILE
 
-# psfzf
-Set-PsFzfOption `
-  -EnableAliasFuzzyHistory `
-  -EnableAliasFuzzyKillProcess `
-  -EnableAliasFuzzySetLocation `
-  -PSReadlineChordProvider 'Alt+t' `
-  -PSReadlineChordReverseHistory 'Alt+r' `
-  -PSReadlineChordSetLocation 'Alt+c'
-
 if ($IsWindows) {
   Import-Module posh-git
 
@@ -56,6 +47,15 @@ if ($IsWindows) {
   Import-Module gsudoModule
 
   # psfzf
+  $FZF_DEFAULT_OPTS_FILE="$env:USERPROFILE\.dotfiles\config\fzf\fzfrc"
+
   Set-PsFzfOption `
+    -EnableAliasFuzzyHistory `
+    -EnableAliasFuzzyKillProcess `
+    -EnableAliasFuzzySetLocation `
+    -PSReadlineChordProvider 'Alt+t' `
+    -PSReadlineChordReverseHistory 'Alt+r' `
+    -PSReadlineChordSetLocation 'Alt+c' `
     -EnableAliasFuzzyScoop
+    # -AltCCommand $commandOverride
 }
