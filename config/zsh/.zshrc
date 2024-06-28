@@ -50,6 +50,10 @@ fi
 if [ -x "$(command -v lazydocker)" ]; then
   alias ld="lazydocker"
 fi
+#------------------------------------------------------
+# Completion
+#------------------------------------------------------
+source $CONFIG/zsh/completion.zsh
 
 #------------------------------------------------------
 # Load specific config
