@@ -47,7 +47,7 @@ if ($IsWindows) {
   Import-Module gsudoModule
 
   # psfzf
-  $FZF_DEFAULT_OPTS_FILE="$env:USERPROFILE\.dotfiles\config\fzf\fzfrc"
+  $Env:FZF_DEFAULT_OPTS_FILE="$env:USERPROFILE\.dotfiles\config\fzf\fzfrc"
 
   Set-PsFzfOption `
     -EnableAliasFuzzyHistory `
