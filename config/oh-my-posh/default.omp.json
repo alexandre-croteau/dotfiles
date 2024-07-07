@@ -113,17 +113,28 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "shell",
+          "type": "os",
           "style": "diamond",
-          "leading_diamond": "\ue0b6",
+          "template": " {{ if .WSL }}\ue712 on {{ end }}{{ .Icon }} ",
           "foreground": "p:foreground",
           "background": "p:background",
+          "leading_diamond": "\u256d\u2500\ue0b2",
           "properties": {
-            "mapped_shell_names": {
-              "pwsh": "pwsh \udb82\ude0a",
-              "zsh": "zsh \uf179",
-              "nu": "nu \udb80\udd6c"
-            }
+            "alpine": "\uf300",
+            "arch": "\uf303",
+            "centos": "\uf304",
+            "debian": "\uf306",
+            "elementary": "\uf309",
+            "fedora": "\uf30a",
+            "gentoo": "\uf30d",
+            "linux": "\ue712",
+            "macos": "\ue711",
+            "manjaro": "\uf312",
+            "mint": "\uf30f",
+            "opensuse": "\uf314",
+            "raspbian": "\uf315",
+            "ubuntu": "\uf31c",
+            "windows": "\ue70f"
           }
         },
         {
@@ -213,6 +224,12 @@
       "alignment": "left",
       "newline": true,
       "segments": [
+        {
+          "type": "text",
+          "foreground": "p:color11",
+          "style": "plain",
+          "template": "\u2570\u2500"
+        },
         {
           "type": "text",
           "foreground": "p:color11",
