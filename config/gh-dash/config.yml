@@ -86,12 +86,12 @@ theme:
       inverted: "#41444d"
       faint: "#8f9aae"
       warning: "#ff6480"
-      success: "#25a45c"
+      success: "#3fc56b"
     background:
       selected: "#41444d"
     border:
-      primary: "#7a82da"
-      secondary: "#cdd4e0"
+      primary: "#3476ff"
+      secondary: "#f9c859"
       faint: "#41444d"
 pager:
   diff: delta
