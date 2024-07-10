@@ -1,13 +1,14 @@
 --layout=reverse
 --border
+--wrap
 --color=fg:#cdd4e0,fg+:#41444d
 --color=bg:#41444d,bg+:#8f9aae
 --color=border:#3476ff,header:#25a45c
 --color=hl:#f9c859,hl+:#f9c859
---color=pointer:#41444d:bold,marker:#f9c859,query:#f9c859,prompt:#f9c859,spinner:#f9c859,info:#ff936a:bold
+--color=pointer:#41444d:bold,marker:#f9c859,query:#f9c859,prompt:#f9c859,spinner:#f9c859,info:#3476ff:bold
 --height=35%
 --tiebreak=index
 --pointer='┊'
 --marker='┊'
---prompt=' '
---info=inline:''
+--prompt=''
+--info=inline:' '
