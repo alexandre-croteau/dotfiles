@@ -201,7 +201,7 @@
           "template": " \uf071 "
         },
         {
-          "type": "text",
+          "type": "status",
           "style": "diamond",
           "foreground": "p:color0",
           "background": "p:color10",
@@ -212,7 +212,7 @@
             "{{ if gt .Code 0 }}p:text-background-error{{ end }}"
           ],
           "trailing_diamond": "\ue0b4",
-          "template": " {{ if eq .Code 0 }}\uf4b5{{else}}\uf46f{{ end }} ",
+          "template": " {{ if eq .Code 0 }}\uf4b5{{else}}\uea87 {{ reason .Code }}{{ end }} ",
           "properties": {
             "always_enabled": true
           }
