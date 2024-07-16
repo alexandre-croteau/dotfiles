@@ -1,0 +1,22 @@
+{{ if eq .chezmoi.os "windows" -}}
+# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+# Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+
+### Powershell
+New-Item -Path "$PROFILE" -ItemType SymbolicLink -Value "$env:USERPROFILE\.config\powershell\Microsoft.PowerShell_profile.ps1" -Force
+
+### Lazyvim
+# https://www.lazyvim.org/installation
+New-Item -Path "$env:LOCALAPPDATA\nvim" -ItemType SymbolicLink -Value "$env:USERPROFILE\.config\lazyvim" -Force
+
+### Lazygit
+# https://github.com/jesseduffield/lazygit
+New-Item -Path "$env:LOCALAPPDATA\lazygit" -ItemType SymbolicLink -Value "$env:USERPROFILE\.config\lazygit" -Force
+
+### Lazydocker
+# https://github.com/jesseduffield/lazydocker
+New-Item -Path "$env:LOCALAPPDATA\lazydocker" -ItemType SymbolicLink -Value "$env:USERPROFILE\.config\lazydocker" -Force
+
+### Notepad++
+New-Item -Path "$(scoop prefix notepadplusplus)\shortcuts.xml" -ItemType SymbolicLink -Value "$env:USERPROFILE\.config\notepad++\shortcuts.xml" -Force
+{{- end }}

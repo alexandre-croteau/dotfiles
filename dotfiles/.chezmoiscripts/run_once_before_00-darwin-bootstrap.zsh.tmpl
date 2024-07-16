@@ -1,0 +1,12 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/zsh
+
+echo "› Running macOS Software Update"
+sudo softwareupdate -i -a
+
+# Check for Homebrew
+if test ! $(which brew); then
+  echo "› installing Homebrew for you..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+{{ end -}}

@@ -1,0 +1,20 @@
+encryption = "gpg"
+
+{{ $email := promptStringOnce . "email" "Email address" "alexandre.a.croteau@gmail.com" -}}
+
+[gpg]
+    recipient = "Alexandre Croteau"
+
+[interpreters.ps1]
+    command = "pwsh"
+    args = ["-NoLogo"]
+
+[data]
+    fullname = "Alexandre Croteau"
+    email = {{ $email | quote }}
+    git_email = "5752494+alexandre-croteau@users.noreply.github.com"
+
+[diff]
+    command = "delta"
+    args = "--color-only"
+    pager = "delta"
