@@ -15,3 +15,6 @@ Brewfile
 .zshrc
 .local/
 {{- end }}
+{{ if ne .chezmoi.os "darwin" -}}
+.gnupg/recovery
+{{- end }}
