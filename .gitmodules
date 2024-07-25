@@ -1,3 +1,0 @@
-[submodule "fzf-tab"]
-	path = dotfiles/private_dot_config/fzf/fzf-tab
-	url = https://github.com/Aloxaf/fzf-tab
