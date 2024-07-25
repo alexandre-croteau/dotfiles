@@ -1,6 +1,6 @@
 $env:PATH += ";$env:HOME/.dotnet/tools"
 
-oh-my-posh init pwsh --config "$env:HOME/.config/oh-my-posh/default.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "{{ .chezmoi.homeDir }}/.config/oh-my-posh/default.omp.json" | Invoke-Expression
 
 function Open-Eza { & eza --long --header --icons --all --sort=name --group-directories-first --hyperlink --ignore-glob '.DS_Store|?' }
 New-Alias -Name "la" -Value "Open-Eza" -Description "Eza" -Option ReadOnly -Force
@@ -35,6 +35,9 @@ gh completion -s powershell | Out-String | Invoke-Expression
 
 # Generate shell specific aliases for Copilot in the CLI
 gh copilot alias pwsh | Out-String | Invoke-Expression
+
+# chezmoi completion
+{{- completion "powershell" -}}
 
 {{ if eq .chezmoi.os "windows" -}}
 Import-Module posh-git

@@ -4,7 +4,7 @@
 # Environment variables and functions
 #------------------------------------------------------
 source "$CONFIG/zsh/.zshenv"
-source "$CONFIG/zsh/functions.zsh"
+source "$CONFIG/zsh/_functions.zsh"
 
 #------------------------------------------------------
 # Navigation
@@ -43,9 +43,9 @@ eval "$(oh-my-posh init zsh --config $CONFIG/oh-my-posh/default.omp.json)"
 #------------------------------------------------------
 # Aliases
 #------------------------------------------------------
-source $CONFIG/zsh/aliases.zsh
+source $CONFIG/zsh/_aliases.zsh
 
 #------------------------------------------------------
 # Completion
 #------------------------------------------------------
-source $CONFIG/zsh/completion.zsh
+source $CONFIG/zsh/_completion.zsh

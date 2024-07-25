@@ -32,6 +32,9 @@ fi
 source <(fzf --zsh)
 source "$CONFIG/fzf/fzf-tab/fzf-tab.plugin.zsh"
 
+# 🏡 chezmoi
+{{- completion "zsh" -}}
+
 autoload -U compinit; compinit
 _comp_options+=(globdots)
 
