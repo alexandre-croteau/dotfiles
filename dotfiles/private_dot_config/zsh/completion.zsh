@@ -6,15 +6,6 @@
 #  \____\___/|_|  |_|_|   |_____|_____| |_| |___\___/|_| \_|
  #
 
-autoload -U compinit; compinit
-_comp_options+=(globdots)
-
-# fzf 🌸 A command-line fuzzy finder
-eval "$(fzf --zsh)"
-
-# fzf-tab
-source "$CONFIG/fzf/fzf-tab/fzf-tab.plugin.zsh"
-
 # Homebrew 🍺 The missing package manager for macOS (or Linux)
 if type brew &>/dev/null
 then
@@ -25,7 +16,7 @@ then
   source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
   # zsh-autosuggestions 🌟 Fish-like autosuggestions for zsh
-  source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
   ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=220,bold"
   ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
@@ -37,11 +28,12 @@ then
   export HOMEBREW_BUNDLE_FILE_GLOBAL="$CONFIG/homebrew/Brewfile"
 fi
 
-# chezmoi 🏡
-if type chezmoi &>/dev/null
-then
-  source <(chezmoi completion zsh)
-fi
+# Set up fzf 🌸 key bindings and fuzzy completion
+source <(fzf --zsh)
+source "$CONFIG/fzf/fzf-tab/fzf-tab.plugin.zsh"
+
+autoload -U compinit; compinit
+_comp_options+=(globdots)
 
 #------------------------------------------------------
 # zstyles
