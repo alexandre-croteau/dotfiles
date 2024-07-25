@@ -1,447 +1,468 @@
 {
+    "apps": [
+        {
+            "Info": "",
+            "Updated": "2024-06-19T09:38:52.4046412-04:00",
+            "Source": "main",
+            "Version": "24.07",
+            "Name": "7zip"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-04-09T16:24:54.6020969-04:00",
+            "Source": "main",
+            "Version": "19.00",
+            "Name": "7zip19.00-helper"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-25T19:02:09.7768192-04:00",
+            "Source": "main",
+            "Version": "2.17.18",
+            "Name": "aws"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-09T12:05:16.9433-04:00",
+            "Source": "main",
+            "Version": "2.62.0",
+            "Name": "azure-cli"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-02T09:48:57.0136578-04:00",
+            "Source": "main",
+            "Version": "2024-07-02",
+            "Name": "cacert"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-04-15T16:09:43.6396839-04:00",
+            "Source": "nerd-fonts",
+            "Version": "3.2.1",
+            "Name": "CascadiaCode-NF"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-20T22:21:14.6631615-04:00",
+            "Source": "main",
+            "Version": "2.51.0",
+            "Name": "chezmoi"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-02-27T10:14:09.744446-05:00",
+            "Source": "main",
+            "Version": "3.14",
+            "Name": "dark"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-03-19T12:17:05.8499501-04:00",
+            "Source": "main",
+            "Version": "0.17.0",
+            "Name": "delta"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-06-11T15:14:21.7520414-04:00",
+            "Source": "nonportable",
+            "Version": "1.0.13.0",
+            "Name": "devtoys-np"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-25T19:02:10.6124013-04:00",
+            "Source": "main",
+            "Version": "0.18.23",
+            "Name": "eza"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-05-09T11:29:47.4950086-04:00",
+            "Source": "main",
+            "Version": "10.1.0",
+            "Name": "fd"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-11T10:00:49.2057007-04:00",
+            "Source": "extras",
+            "Version": "3.67.1",
+            "Name": "filezilla"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-04-15T16:11:01.0520899-04:00",
+            "Source": "nerd-fonts",
+            "Version": "3.2.1",
+            "Name": "FiraCode-NF"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-12T17:48:15.9928952-04:00",
+            "Source": "C:\\Users\\u362acro\\code\\github.com\\alexandre-croteau\\scoop-bucket-main\\bucket\\fzf.json",
+            "Version": "0.54.0",
+            "Name": "fzf"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-23T20:14:23.392038-04:00",
+            "Source": "extras",
+            "Version": "485.0.0",
+            "Name": "gcloud"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-23T20:14:25.6398278-04:00",
+            "Source": "main",
+            "Version": "2.53.0",
+            "Name": "gh"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-03T10:38:05.4044444-04:00",
+            "Source": "main",
+            "Version": "1.22.5",
+            "Name": "go"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-03-12T22:01:59.8121348-04:00",
+            "Source": "extras",
+            "Version": "4.3.1",
+            "Name": "gpg4win"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-06-03T09:33:56.3689411-04:00",
+            "Source": "main",
+            "Version": "2.5.1",
+            "Name": "gsudo"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-01-12T15:48:50.9945773-05:00",
+            "Source": "main",
+            "Version": "1.3.12",
+            "Name": "gzip"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-04-15T16:10:43.7178982-04:00",
+            "Source": "nerd-fonts",
+            "Version": "3.2.1",
+            "Name": "Hasklig-NF"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-04-15T16:10:56.5256446-04:00",
+            "Source": "nerd-fonts",
+            "Version": "3.2.1",
+            "Name": "Hasklig-NF-Mono"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-04-10T13:40:50.4009808-04:00",
+            "Source": "main",
+            "Version": "0.7.6",
+            "Name": "jid"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-04-10T12:59:53.9334696-04:00",
+            "Source": "main",
+            "Version": "1.7.1",
+            "Name": "jq"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-06-03T09:37:21.6936907-04:00",
+            "Source": "extras",
+            "Version": "2.57",
+            "Name": "keepass"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-05-28T14:22:17.6471291-04:00",
+            "Source": "main",
+            "Version": "0.23.3",
+            "Name": "lazydocker"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-23T20:14:27.5540692-04:00",
+            "Source": "extras",
+            "Version": "0.43.1",
+            "Name": "lazygit"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-23T20:14:29.2260076-04:00",
+            "Source": "main",
+            "Version": "2.1.1",
+            "Name": "lessmsi"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-01-18T17:24:56.3258864-05:00",
+            "Source": "main",
+            "Version": "13.2.0-rt_v11-rev1",
+            "Name": "mingw"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-25T19:02:18.71704-04:00",
+            "Source": "main",
+            "Version": "0.10.1",
+            "Name": "neovim"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-23T20:14:32.8146149-04:00",
+            "Source": "extras",
+            "Version": "8.6.9",
+            "Name": "notepadplusplus"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-05-08T16:17:21.0725863-04:00",
+            "Source": "nonportable",
+            "Version": "3.10",
+            "Name": "nsis-np"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-25T19:02:22.477364-04:00",
+            "Source": "main",
+            "Version": "0.96.0",
+            "Name": "nu"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-10T21:49:27.7371437-04:00",
+            "Source": "main",
+            "Version": "6.10.1",
+            "Name": "nuget"
+        },
+        {
+            "Info": "",
+            "Updated": "2023-12-14T15:06:58.2888483-05:00",
+            "Source": "extras",
+            "Version": "6.0.64",
+            "Name": "nuget-package-explorer"
+        },
+        {
+            "Info": "",
+            "Updated": "2023-12-14T15:05:39.5991156-05:00",
+            "Source": "main",
+            "Version": "1.1.12",
+            "Name": "nvm"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-25T19:02:24.5779879-04:00",
+            "Source": "main",
+            "Version": "22.3.0",
+            "Name": "oh-my-posh"
+        },
+        {
+            "Info": "Held package",
+            "Updated": "2024-05-09T15:31:35.8098356-04:00",
+            "Source": "C:\\Users\\u362acro\\scoop\\buckets\\main\\bucket\\packer.json",
+            "Version": "1.9.5",
+            "Name": "packer"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-06-03T09:34:01.1372244-04:00",
+            "Source": "main",
+            "Version": "1.6.0",
+            "Name": "pipx"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-01-18T17:03:48.1797047-05:00",
+            "Source": "extras",
+            "Version": "1.1.0",
+            "Name": "posh-git"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-25T19:02:43.3763493-04:00",
+            "Source": "extras",
+            "Version": "11.5.0",
+            "Name": "postman"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-25T19:03:36.1545702-04:00",
+            "Source": "extras",
+            "Version": "0.82.1",
+            "Name": "powertoys"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-06-10T17:39:40.8269634-04:00",
+            "Source": "extras",
+            "Version": "2.6.1",
+            "Name": "psfzf"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-23T20:11:05.6158129-04:00",
+            "Source": "main",
+            "Version": "7.4.4",
+            "Name": "pwsh"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-06-10T12:16:52.5815132-04:00",
+            "Source": "main",
+            "Version": "3.12.4",
+            "Name": "python"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-01-12T15:44:02.389058-05:00",
+            "Source": "main",
+            "Version": "14.1.0",
+            "Name": "ripgrep"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-03-07T15:17:13.9996344-05:00",
+            "Source": "extras",
+            "Version": "0.3.0",
+            "Name": "scoop-completion"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-01-12T12:04:40.1464914-05:00",
+            "Source": "main",
+            "Version": "0.2.0",
+            "Name": "smimesign"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-10T21:53:48.9940353-04:00",
+            "Source": "nonportable",
+            "Version": "20.2.30.0",
+            "Name": "sql-server-management-studio-np"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-04-24T10:55:51.8204181-04:00",
+            "Source": "java",
+            "Version": "11.0.23-9",
+            "Name": "temurin11-jre"
+        },
+        {
+            "Info": "Held package",
+            "Updated": "2024-05-01T18:03:32.4527502-04:00",
+            "Source": "C:\\Users\\u362acro\\scoop\\buckets\\main\\bucket\\terraform.json",
+            "Version": "1.4.4",
+            "Name": "terraform"
+        },
+        {
+            "Info": "Held package",
+            "Updated": "2023-12-14T15:13:43.4556246-05:00",
+            "Source": "C:\\Users\\u362acro\\scoop\\buckets\\main\\bucket\\terraform-docs.json",
+            "Version": "0.16.0",
+            "Name": "terraform-docs"
+        },
+        {
+            "Info": "Held package",
+            "Updated": "2024-05-01T18:05:04.6389156-04:00",
+            "Source": "C:\\Users\\u362acro\\scoop\\buckets\\main\\bucket\\tflint.json",
+            "Version": "0.45.0",
+            "Name": "tflint"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-01-12T15:48:37.8729548-05:00",
+            "Source": "main",
+            "Version": "6.00",
+            "Name": "unzip"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-05-21T15:02:01.3533057-04:00",
+            "Source": "extras",
+            "Version": "14.40.33810.0",
+            "Name": "vcredist2022"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-12T10:35:16.0919579-04:00",
+            "Source": "extras",
+            "Version": "1.91.1",
+            "Name": "vscode"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-01-12T15:48:33.4847802-05:00",
+            "Source": "main",
+            "Version": "1.21.4",
+            "Name": "wget"
+        },
+        {
+            "Info": "",
+            "Updated": "2024-07-02T10:58:18.191942-04:00",
+            "Source": "extras",
+            "Version": "1.20.11781.0",
+            "Name": "windows-terminal"
+        },
+        {
+            "Info": "Global install",
+            "Updated": "2024-06-03T09:51:20.5424714-04:00",
+            "Source": "main",
+            "Version": "2.45.2",
+            "Name": "git"
+        }
+    ],
     "buckets": [
         {
             "Name": "main",
             "Source": "https://github.com/ScoopInstaller/Main",
-            "Updated": "2024-06-10T12:29:11-04:00",
-            "Manifests": 1327
+            "Updated": "2024-07-25T16:25:26-04:00",
+            "Manifests": 1337
         },
         {
             "Name": "extras",
             "Source": "https://github.com/ScoopInstaller/Extras",
-            "Updated": "2024-06-10T12:31:40-04:00",
-            "Manifests": 2034
+            "Updated": "2024-07-25T19:31:24-04:00",
+            "Manifests": 2053
         },
         {
             "Name": "versions",
             "Source": "https://github.com/ScoopInstaller/Versions",
-            "Updated": "2024-06-10T12:37:03-04:00",
-            "Manifests": 463
+            "Updated": "2024-07-25T16:29:59-04:00",
+            "Manifests": 467
         },
         {
             "Name": "nerd-fonts",
             "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
-            "Updated": "2024-06-05T10:19:38-04:00",
+            "Updated": "2024-07-16T13:17:17-04:00",
             "Manifests": 336
         },
         {
             "Name": "nonportable",
             "Source": "https://github.com/ScoopInstaller/Nonportable",
-            "Updated": "2024-06-10T12:37:18-04:00",
+            "Updated": "2024-07-25T16:29:38-04:00",
             "Manifests": 127
         },
         {
             "Name": "java",
             "Source": "https://github.com/ScoopInstaller/Java",
-            "Updated": "2024-06-08T12:19:27-04:00",
+            "Updated": "2024-07-22T08:31:14-04:00",
             "Manifests": 280
         },
         {
             "Name": "cascades",
             "Source": "https://github.com/cascades-cti/scoop",
-            "Updated": "2024-04-25T23:10:54-04:00",
+            "Updated": "2024-07-12T14:09:16-04:00",
             "Manifests": 1
-        }
-    ],
-    "apps": [
-        {
-            "Source": "main",
-            "Version": "24.06",
-            "Name": "7zip",
-            "Info": "",
-            "Updated": "2024-05-28T14:21:47.5015825-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "19.00",
-            "Name": "7zip19.00-helper",
-            "Info": "",
-            "Updated": "2024-04-09T16:24:54.6020969-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "2.16.4",
-            "Name": "aws",
-            "Info": "",
-            "Updated": "2024-06-10T12:16:30.1115498-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "2.61.0",
-            "Name": "azure-cli",
-            "Info": "",
-            "Updated": "2024-05-21T11:05:16.3702445-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "2024-03-11",
-            "Name": "cacert",
-            "Info": "",
-            "Updated": "2024-03-12T22:01:09.6124164-04:00"
-        },
-        {
-            "Source": "nerd-fonts",
-            "Version": "3.2.1",
-            "Name": "CascadiaCode-NF",
-            "Info": "",
-            "Updated": "2024-04-15T16:09:43.6396839-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "3.14",
-            "Name": "dark",
-            "Info": "",
-            "Updated": "2024-02-27T10:14:09.744446-05:00"
-        },
-        {
-            "Source": "main",
-            "Version": "0.17.0",
-            "Name": "delta",
-            "Info": "",
-            "Updated": "2024-03-19T12:17:05.8499501-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "0.18.17",
-            "Name": "eza",
-            "Info": "",
-            "Updated": "2024-06-06T10:03:45.9886601-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "10.1.0",
-            "Name": "fd",
-            "Info": "",
-            "Updated": "2024-05-09T11:29:47.4950086-04:00"
-        },
-        {
-            "Source": "extras",
-            "Version": "3.67.0",
-            "Name": "filezilla",
-            "Info": "",
-            "Updated": "2024-04-24T10:36:25.2918347-04:00"
-        },
-        {
-            "Source": "nerd-fonts",
-            "Version": "3.2.1",
-            "Name": "FiraCode-NF",
-            "Info": "",
-            "Updated": "2024-04-15T16:11:01.0520899-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "0.53.0",
-            "Name": "fzf",
-            "Info": "",
-            "Updated": "2024-06-10T17:39:50.7632601-04:00"
-        },
-        {
-            "Source": "extras",
-            "Version": "479.0.0",
-            "Name": "gcloud",
-            "Info": "",
-            "Updated": "2024-06-05T10:06:57.0219261-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "2.50.0",
-            "Name": "gh",
-            "Info": "",
-            "Updated": "2024-05-30T09:55:56.5164026-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "1.22.4",
-            "Name": "go",
-            "Info": "",
-            "Updated": "2024-06-05T10:07:59.2930893-04:00"
-        },
-        {
-            "Source": "extras",
-            "Version": "4.3.1",
-            "Name": "gpg4win",
-            "Info": "",
-            "Updated": "2024-03-12T22:01:59.8121348-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "2.5.1",
-            "Name": "gsudo",
-            "Info": "",
-            "Updated": "2024-06-03T09:33:56.3689411-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "1.3.12",
-            "Name": "gzip",
-            "Info": "",
-            "Updated": "2024-01-12T15:48:50.9945773-05:00"
-        },
-        {
-            "Source": "nerd-fonts",
-            "Version": "3.2.1",
-            "Name": "Hasklig-NF",
-            "Info": "",
-            "Updated": "2024-04-15T16:10:43.7178982-04:00"
-        },
-        {
-            "Source": "nerd-fonts",
-            "Version": "3.2.1",
-            "Name": "Hasklig-NF-Mono",
-            "Info": "",
-            "Updated": "2024-04-15T16:10:56.5256446-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "0.7.6",
-            "Name": "jid",
-            "Info": "",
-            "Updated": "2024-04-10T13:40:50.4009808-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "1.7.1",
-            "Name": "jq",
-            "Info": "",
-            "Updated": "2024-04-10T12:59:53.9334696-04:00"
-        },
-        {
-            "Source": "extras",
-            "Version": "2.57",
-            "Name": "keepass",
-            "Info": "",
-            "Updated": "2024-06-03T09:37:21.6936907-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "0.23.3",
-            "Name": "lazydocker",
-            "Info": "",
-            "Updated": "2024-05-28T14:22:17.6471291-04:00"
-        },
-        {
-            "Source": "extras",
-            "Version": "0.42.0",
-            "Name": "lazygit",
-            "Info": "",
-            "Updated": "2024-05-21T11:05:19.2174989-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "2.0.1",
-            "Name": "lessmsi",
-            "Info": "",
-            "Updated": "2024-05-06T19:02:56.7307318-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "13.2.0-rt_v11-rev1",
-            "Name": "mingw",
-            "Info": "",
-            "Updated": "2024-01-18T17:24:56.3258864-05:00"
-        },
-        {
-            "Source": "main",
-            "Version": "0.10.0",
-            "Name": "neovim",
-            "Info": "",
-            "Updated": "2024-05-17T15:00:00.556941-04:00"
-        },
-        {
-            "Source": "extras",
-            "Version": "8.6.8",
-            "Name": "notepadplusplus",
-            "Info": "",
-            "Updated": "2024-06-04T11:13:53.5744564-04:00"
-        },
-        {
-            "Source": "nonportable",
-            "Version": "3.10",
-            "Name": "nsis-np",
-            "Info": "",
-            "Updated": "2024-05-08T16:17:21.0725863-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "0.93.0",
-            "Name": "nu",
-            "Info": "",
-            "Updated": "2024-05-01T09:58:17.5648655-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "6.10.0",
-            "Name": "nuget",
-            "Info": "",
-            "Updated": "2024-05-23T19:32:17.5384861-04:00"
-        },
-        {
-            "Source": "extras",
-            "Version": "6.0.64",
-            "Name": "nuget-package-explorer",
-            "Info": "",
-            "Updated": "2023-12-14T15:06:58.2888483-05:00"
-        },
-        {
-            "Source": "main",
-            "Version": "1.1.12",
-            "Name": "nvm",
-            "Info": "",
-            "Updated": "2023-12-14T15:05:39.5991156-05:00"
-        },
-        {
-            "Source": "main",
-            "Version": "21.5.0",
-            "Name": "oh-my-posh",
-            "Info": "",
-            "Updated": "2024-06-10T15:51:40.0291141-04:00"
-        },
-        {
-            "Source": "C:\\Users\\u362acro\\scoop\\buckets\\main\\bucket\\packer.json",
-            "Version": "1.9.5",
-            "Name": "packer",
-            "Info": "Held package",
-            "Updated": "2024-05-09T15:31:35.8098356-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "1.6.0",
-            "Name": "pipx",
-            "Info": "",
-            "Updated": "2024-06-03T09:34:01.1372244-04:00"
-        },
-        {
-            "Source": "extras",
-            "Version": "1.1.0",
-            "Name": "posh-git",
-            "Info": "",
-            "Updated": "2024-01-18T17:03:48.1797047-05:00"
-        },
-        {
-            "Source": "extras",
-            "Version": "11.1.14",
-            "Name": "postman",
-            "Info": "",
-            "Updated": "2024-05-21T14:59:43.3416643-04:00"
-        },
-        {
-            "Source": "extras",
-            "Version": "2.6.1",
-            "Name": "psfzf",
-            "Info": "",
-            "Updated": "2024-06-10T17:39:40.8269634-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "7.4.2",
-            "Name": "pwsh",
-            "Info": "",
-            "Updated": "2024-04-15T16:41:07.5120069-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "3.12.4",
-            "Name": "python",
-            "Info": "",
-            "Updated": "2024-06-10T12:16:52.5815132-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "14.1.0",
-            "Name": "ripgrep",
-            "Info": "",
-            "Updated": "2024-01-12T15:44:02.389058-05:00"
-        },
-        {
-            "Source": "extras",
-            "Version": "0.3.0",
-            "Name": "scoop-completion",
-            "Info": "",
-            "Updated": "2024-03-07T15:17:13.9996344-05:00"
-        },
-        {
-            "Source": "main",
-            "Version": "0.2.0",
-            "Name": "smimesign",
-            "Info": "",
-            "Updated": "2024-01-12T12:04:40.1464914-05:00"
-        },
-        {
-            "Source": "nonportable",
-            "Version": "20.1.10.0",
-            "Name": "sql-server-management-studio-np",
-            "Info": "",
-            "Updated": "2024-04-23T17:25:40.4460428-04:00"
-        },
-        {
-            "Source": "java",
-            "Version": "11.0.23-9",
-            "Name": "temurin11-jre",
-            "Info": "",
-            "Updated": "2024-04-24T10:55:51.8204181-04:00"
-        },
-        {
-            "Source": "C:\\Users\\u362acro\\scoop\\buckets\\main\\bucket\\terraform.json",
-            "Version": "1.4.4",
-            "Name": "terraform",
-            "Info": "Held package",
-            "Updated": "2024-05-01T18:03:32.4527502-04:00"
-        },
-        {
-            "Source": "C:\\Users\\u362acro\\scoop\\buckets\\main\\bucket\\terraform-docs.json",
-            "Version": "0.16.0",
-            "Name": "terraform-docs",
-            "Info": "Held package",
-            "Updated": "2023-12-14T15:13:43.4556246-05:00"
-        },
-        {
-            "Source": "C:\\Users\\u362acro\\scoop\\buckets\\main\\bucket\\tflint.json",
-            "Version": "0.45.0",
-            "Name": "tflint",
-            "Info": "Held package",
-            "Updated": "2024-05-01T18:05:04.6389156-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "6.00",
-            "Name": "unzip",
-            "Info": "",
-            "Updated": "2024-01-12T15:48:37.8729548-05:00"
-        },
-        {
-            "Source": "extras",
-            "Version": "14.40.33810.0",
-            "Name": "vcredist2022",
-            "Info": "",
-            "Updated": "2024-05-21T15:02:01.3533057-04:00"
-        },
-        {
-            "Source": "extras",
-            "Version": "1.90.0",
-            "Name": "vscode",
-            "Info": "",
-            "Updated": "2024-06-06T10:04:43.2727379-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "1.21.4",
-            "Name": "wget",
-            "Info": "",
-            "Updated": "2024-01-12T15:48:33.4847802-05:00"
-        },
-        {
-            "Source": "extras",
-            "Version": "1.20.11381.0",
-            "Name": "windows-terminal",
-            "Info": "",
-            "Updated": "2024-06-10T15:51:43.7105724-04:00"
-        },
-        {
-            "Source": "main",
-            "Version": "2.45.2",
-            "Name": "git",
-            "Info": "Global install",
-            "Updated": "2024-06-03T09:51:20.5424714-04:00"
         }
     ]
 }
