@@ -28,6 +28,11 @@
 [core]
         editor = code --wait
         pager = delta
+{{- if eq .chezmoi.os "windows" }}
+        autocrlf = true
+{{- else }}
+        autocrlf = input
+{{- end }}
 [credential]
         helper =
         helper = manager
