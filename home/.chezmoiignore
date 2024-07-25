@@ -1,20 +1,17 @@
 README.md
 LICENSE
-{{ if eq .chezmoi.os "darwin" -}}
-# Ignore Windows-specific files on macOS
-.config/scoop/
-.config/notepad++/
-.config/windows-terminal/
-{{- end }}
-{{ if eq .chezmoi.os "windows" -}}
-# Ignore macOS-specific files on Windows
+{{ if ne .chezmoi.os "darwin" -}}
+.chezmoiscripts/macos/**
+.gnupg/recovery
 .config/homebrew/
 .config/kitty/
 .config/zsh/
-Brewfile
 .zshrc
 .local/
 {{- end }}
-{{ if ne .chezmoi.os "darwin" -}}
-.gnupg/recovery
+{{ if ne .chezmoi.os "windows" -}}
+.chezmoiscripts/windows/**
+.config/scoop/
+.config/notepad++/
+.config/windows-terminal/
 {{- end }}
