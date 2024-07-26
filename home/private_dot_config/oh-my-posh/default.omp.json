@@ -143,7 +143,7 @@
           "powerline_symbol": "",
           "foreground": "p:transient-foreground",
           "background": "p:background",
-          "template": "{{ if not .Error }}{{ if (eq \"Discharging\" .State.String )}}{{ .Icon }}{{ .Percentage }}% {{ end }}{{ end }}",
+          "template": "{{ if not .Error }}{{ if (eq \"Discharging\" .State.String ) }}{{ .Icon }}{{ .Percentage }}% {{ end }}{{ end }}",
           "properties": {
             "discharging_icon": "\udb84\udea2",
             "charging_icon": "\udb84\udea5",
@@ -175,7 +175,7 @@
         },
         {
           "type": "git",
-          "style": "powerline",
+          "style": "accordion",
           "powerline_symbol": "\ue0b0",
           "foreground": "p:git-foreground",
           "background": "p:git-background",
