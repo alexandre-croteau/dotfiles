@@ -102,7 +102,7 @@ echo "› Installing Homebrew taps, brews and casks..."
   "vlc"
 -}}
 
-brew bundle --no-lock --file=- <<EOF
+brew bundle --global --no-lock --file=- <<EOF
 {{ range ($taps | sortAlpha | uniq) -}}
 tap "{{ . }}"
 {{ end -}}
