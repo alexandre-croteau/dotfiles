@@ -23,7 +23,6 @@ echo "› Installing Homebrew taps, brews and casks..."
   "chezmoi"
   "libnghttp2"
   "curl"
-  "dotnet"
   "folly"
   "fizz"
   "wangle"
@@ -72,6 +71,7 @@ echo "› Installing Homebrew taps, brews and casks..."
   "cyberduck"
   "devtoys"
   "docker"
+  "dotnet-sdk"
   "firefox"
   "font-caskaydia-cove-nerd-font"
   "font-fira-code-nerd-font"
@@ -102,7 +102,7 @@ echo "› Installing Homebrew taps, brews and casks..."
   "vlc"
 -}}
 
-brew bundle --global --no-lock --file=- <<EOF
+brew bundle --cleanup --no-lock --file=- <<EOF
 {{ range ($taps | sortAlpha | uniq) -}}
 tap "{{ . }}"
 {{ end -}}
