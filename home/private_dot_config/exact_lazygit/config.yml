@@ -114,6 +114,7 @@ notARepository: 'skip'
 os:
   editInTerminal: false
   editPreset: "vscode"
+  open: "code -- {{filename}}"
 refresher:
   fetchInterval: 60 # Re-fetch interval in seconds. Auto-fetch can be disabled via option 'git.autoFetch'.
   refreshInterval: 30 # File/submodule refresh interval in seconds. Auto-refresh can be disabled via option 'git.autoRefresh'.
