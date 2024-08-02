@@ -1,0 +1,14 @@
+{{- /* chezmoi:modify-template */ -}}
+
+{{- /* Load existing configuration */ -}}
+{{- $result := dict -}}
+{{- if not (.chezmoi.stdin | trim | empty) -}}
+{{-   $result = fromJsonc .chezmoi.stdin -}}
+{{- end -}}
+
+{{- $result = setValueAtPath "alias.outdated" "scoop-outdated" $result -}}
+{{- $result = setValueAtPath "alias.rm" "scoop-rm" $result -}}
+{{- $result = setValueAtPath "alias.upgrade" "scoop-upgrade" $result -}}
+{{- $result = setValueAtPath "use_lessmsi" true $result -}}
+
+{{- toPrettyJson "    " $result | trimSuffix "\n" -}}
