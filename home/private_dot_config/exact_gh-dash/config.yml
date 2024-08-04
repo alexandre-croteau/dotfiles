@@ -79,6 +79,7 @@ theme:
   ui:
     table:
       showSeparator: false
+      compact: true
   colors:
     text:
       primary: "#8f9aae"
@@ -95,4 +96,3 @@ theme:
       faint: "#41444d"
 pager:
   diff: delta
-
