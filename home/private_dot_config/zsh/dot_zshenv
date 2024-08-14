@@ -31,3 +31,5 @@ export NVM_DIR="$HOME/.nvm"
 export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
 
 export FZF_DEFAULT_OPTS_FILE="$CONFIG/fzf/fzfrc"
+
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
