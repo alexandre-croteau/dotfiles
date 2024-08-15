@@ -1,0 +1,26 @@
+[default]
+region = ca-central-1
+profile = cicd
+output = json
+[sso-session a362acro]
+sso_start_url = https://d-9d6725e100.awsapps.com/start/#
+sso_region = ca-central-1
+sso_registration_scopes = sso:account:access
+[profile shared-infra-prod]
+sso_session = a362acro
+sso_account_id = 598499117625
+sso_role_name = CAS-Prod
+region = ca-central-1
+output = json
+[profile cicd]
+sso_session = a362acro
+sso_account_id = 927105737048
+sso_role_name = CAS-Core
+region = ca-central-1
+output = json
+[profile shared-infra-dev]
+sso_session = a362acro
+sso_account_id = 944716061144
+sso_role_name = CAS-Dev
+region = ca-central-1
+output = json
