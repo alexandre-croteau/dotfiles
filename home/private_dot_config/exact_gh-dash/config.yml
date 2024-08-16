@@ -27,10 +27,8 @@ defaults:
       updatedAt:
         hidden: true
       repo:
-        width: 25
-        grow: true
+        width: 35
       author:
-        grow: true
         hidden: true
       title:
         grow: true
@@ -58,7 +56,7 @@ defaults:
   issuesLimit: 20 # global limit
   preview:
     open: true # wether to have the preview pane open by default
-    width: 90 # width in columns
+    width: 70 # width in columns
   refetchIntervalMinutes: 30 # will refetch all sections every 30 minutes
 repoPaths: # configure where to locate repos when checking out PRs
   :owner/:repo: ~/code/github.com/:owner/:repo
