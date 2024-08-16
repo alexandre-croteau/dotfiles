@@ -58,6 +58,21 @@ customCommands:
         body: "Are you sure you want to commit?"
     command: "git commit --message '{{.Form.Type}}{{.Form.Scope}}{{.Form.Breaking}}: {{.Form.Message}}'"
     loadingText: "Creating conventional commit..."
+  - key: "<c-c>"
+    context: "tags"
+    description: "GitHub Create Release"
+    prompts:
+      - type: "input"
+        title: "Version"
+        key: "Tag"
+        suggestions:
+          preset: "tags"
+      - type: "confirm"
+        title: "Create GitHub Release"
+        key: "confirm"
+        body: "Ready to create {{ .Form.Tag }} ?"
+    command: "gh release create {{ .Form.Tag }} --generate-notes --latest"
+    loadingText: "Creating GitHub release..."
 git:
   commit:
     autoWrapCommitMessage: true
