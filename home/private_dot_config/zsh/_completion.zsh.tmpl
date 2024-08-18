@@ -9,7 +9,7 @@
 # Homebrew 🍺 The missing package manager for macOS (or Linux)
 if type brew &>/dev/null
 then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  FPATH="$(brew --prefix)/share/zsh/site-functions:$(brew --prefix)/share/zsh-completions:${FPATH}"
 
   # Google Cloud SDK
   source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
