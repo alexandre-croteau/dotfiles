@@ -1,0 +1,26 @@
+{
+  "name": "vscode-color-theme",
+  "displayName": "vscode color theme",
+  "description": "VSCode Color Theme",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Alexandre Croteau",
+        "uiTheme": "vs-dark",
+        "path": "./themes/alexandre-croteau-dark-color-theme.json"
+      },
+      {
+        "label": "Alexandre Croteau",
+        "uiTheme": "vs",
+        "path": "./themes/alexandre-croteau-light-color-theme.json"
+      }
+    ]
+  }
+}
