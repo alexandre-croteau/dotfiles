@@ -103,3 +103,11 @@ fi
 if [ -x "$(command -v lazydocker)" ]; then
   alias ld="lazydocker"
 fi
+
+#------------------------------------------------------
+# piactl
+#------------------------------------------------------
+# use nvim if available
+if [ -x "$(command -v piactl)" ]; then
+  alias vpn="piactl"
+fi
