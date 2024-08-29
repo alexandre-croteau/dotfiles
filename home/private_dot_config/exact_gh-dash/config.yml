@@ -62,17 +62,14 @@ repoPaths: # configure where to locate repos when checking out PRs
   :owner/:repo: ~/code/github.com/:owner/:repo
 keybindings:
   prs:
-    # - key: c
-    #   command: >
-    #     tmux new-window -c {{.RepoPath}} '
-    #       gh pr checkout {{.PrNumber}} &&
-    #       nvim -c ":DiffviewOpen master...{{.HeadRefName}}"
-    #     '
     - key: v
+      command: >
+        gh pr review {{ .PrNumber }} --repo {{ .RepoName }} --approve
+    - key: C
       command: >
         cd {{.RepoPath}} &&
         code . &&
-        gh pr checkout {{.PrNumber}}
+        gh pr checkout {{ .PrNumber }}
 theme:
   ui:
     table:
