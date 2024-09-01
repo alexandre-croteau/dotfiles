@@ -26,7 +26,7 @@
 [color]
         ui = auto
 [core]
-        editor = code --wait
+        editor = code --reuse-window --wait
         pager = delta
 {{- if eq .chezmoi.os "windows" }}
         autocrlf = true
@@ -52,7 +52,7 @@
 [difftool]
         prompt = false
 [difftool "vscode"]
-        cmd = code --wait --diff $LOCAL $REMOTE
+        cmd = code --reuse-window --wait --diff $LOCAL $REMOTE
 [filter "lfs"]
         required = true
         clean = git-lfs clean -- %f
@@ -79,7 +79,7 @@
 [mergetool]
         keepBackup = false
 [mergetool "vscode"]
-        cmd = code --wait $MERGED
+        cmd = code --reuse-window --wait $MERGED
 [pull]
         rebase = interactive
 [push]
