@@ -15,4 +15,5 @@ LICENSE
 .config/scoop/
 .config/notepad++/
 .config/windows-terminal/
+scoop/
 {{- end }}

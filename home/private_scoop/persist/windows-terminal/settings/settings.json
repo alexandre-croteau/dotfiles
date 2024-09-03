@@ -1,0 +1,194 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions":
+    [
+        {
+            "command":
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command":
+            {
+                "action": "newTab"
+            },
+            "id": "User.newTab.5DEADB41",
+            "keys": "ctrl+t"
+        },
+        {
+            "command":
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        },
+        {
+            "command":
+            {
+                "action": "newWindow"
+            },
+            "id": "User.newWindow.5DEADB41",
+            "keys": "ctrl+n"
+        },
+        {
+            "command": "find",
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "command":
+            {
+                "action": "closeTab"
+            },
+            "id": "User.closeTab.0",
+            "keys": "ctrl+w"
+        },
+        {
+          "keys": "ctrl+up",
+          "command": {
+            "action": "scrollToMark",
+            "direction": "previous"
+          },
+          "name": "Previous mark"
+        },
+        {
+          "keys": "ctrl+down",
+          "command": {
+            "action": "scrollToMark",
+            "direction": "next"
+          },
+          "name": "Next mark"
+        },
+        {
+          "command": {
+            "action": "addMark"
+          }
+        },
+        {
+          "command": {
+            "action": "addMark",
+            "color": "#ff00ff"
+          }
+        },
+        {
+          "command": {
+            "action": "addMark",
+            "color": "#0000ff"
+          }
+        },
+        {
+          "command": {
+            "action": "clearAllMarks"
+          }
+        }
+    ],
+    "centerOnLaunch": true,
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "firstWindowPreference": "persistedWindowLayout",
+    "launchMode": "maximized",
+    "newTabMenu":
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles":
+    {
+        "defaults":
+        {
+            "colorScheme": "BlulocoDark",
+            "cursorShape": "filledBox",
+            "font":
+            {
+                "face": "CaskaydiaCove Nerd Font",
+                "features":
+                {
+                    "cv17": 1,
+                    "onum": 1,
+                    "ss03": 1
+                },
+                "weight": "semi-light"
+            },
+            "opacity": 95,
+            "padding": "10",
+            "scrollbarState": "visible",
+            "experimental.autoMarkPrompts": true,
+            "experimental.showMarksOnScrollbar": true
+        },
+        "list":
+        [
+            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": true,
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+            }
+        ]
+    },
+    "schemes":
+    [
+        {
+            "background": "#282C34",
+            "black": "#41444D",
+            "blue": "#3476FF",
+            "brightBlack": "#8F9AAE",
+            "brightBlue": "#10B1FE",
+            "brightCyan": "#5FB9BC",
+            "brightGreen": "#3FC56B",
+            "brightPurple": "#FF78F8",
+            "brightRed": "#FF6480",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#F9C859",
+            "cursorColor": "#FFCC00",
+            "cyan": "#4483AA",
+            "foreground": "#B9C0CB",
+            "green": "#25A45C",
+            "name": "BlulocoDark",
+            "purple": "#7A82DA",
+            "red": "#FC2F52",
+            "selectionBackground": "#B9C0CA",
+            "white": "#CDD4E0",
+            "yellow": "#FF936A"
+        }
+    ],
+    "theme": "light",
+    "themes": []
+}
