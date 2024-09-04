@@ -1,5 +1,8 @@
-# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-# Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+### Scoop
+if (![Boolean](Get-Command scoop -ErrorAction SilentlyContinue)) {
+  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+  Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+}
 
 ### Powershell
 New-Item -Path "$PROFILE" -ItemType SymbolicLink -Value "$env:USERPROFILE\.config\powershell\Microsoft.PowerShell_profile.ps1" -Force
