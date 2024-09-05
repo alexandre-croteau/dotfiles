@@ -35,7 +35,7 @@
     minus-style = bluloco.dark-grey bold dim bluloco.lite-red
     minus-empty-line-marker-style = bluloco.red bluloco.lite-red
     plus-emph-style = bluloco.green bold reverse bluloco.yellow
-    plus-style = bluloco.green bold bluloco.lite-green
+    plus-style = bluloco.dark-grey bold dim bluloco.lite-green
     plus-empty-line-marker-style = bluloco.green bluloco.lite-green
     grep-file-style = bluloco.purple
     grep-line-number-style = bluloco.green
