@@ -32,7 +32,11 @@ strict-ssl=false
 ; cache=~/.npm
 ; cache-max=null
 ; cache-min=0
-; cafile=null
+{{- if eq .chezmoi.os "windows" }}
+cafile=~/ca.pem
+{{- else }}
+; cafile=
+{{- end }}
 ; call=
 ; cert=null
 ; cidr=null
@@ -42,7 +46,7 @@ strict-ssl=false
 ; depth=null
 ; description=true
 ; dev=false
-; 
+;
 ; diff-ignore-all-space=false
 ; diff-name-only=false
 ; diff-no-prefix=false
@@ -73,7 +77,7 @@ strict-ssl=false
 ; https-proxy=null
 ; if-present=false
 ; ignore-scripts=false
-; 
+;
 ; include-staged=false
 ; include-workspace-root=false
 ; init-author-email=
@@ -108,13 +112,13 @@ strict-ssl=false
 ; node-options=null
 ; noproxy=
 ; offline=false
-; 
+;
 ; omit-lockfile-registry-resolved=false
 ; only=null
 ; optional=null
 ; os=null
 ; otp=null
-; 
+;
 ; package-lock=true
 ; package-lock-only=false
 ; pack-destination=.
@@ -168,7 +172,7 @@ strict-ssl=false
 ; versions=false
 ; viewer=man
 ; which=null
-; 
+;
 ; workspaces=null
 ; workspaces-update=true
 ; yes=null

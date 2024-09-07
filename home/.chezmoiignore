@@ -12,6 +12,7 @@ LICENSE
 {{ if ne .chezmoi.os "windows" -}}
 .chezmoiscripts/windows/**
 .wslconfig
+.config/certs/
 .config/scoop/
 .config/notepad++/
 .config/windows-terminal/
