@@ -1,10 +1,38 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
+    "actions": 
     [
         {
-            "command":
+            "command": 
+            {
+                "action": "scrollToMark",
+                "direction": "previous"
+            },
+            "id": "User.scrollToMark.D3F0B923",
+            "keys": "ctrl+up",
+            "name": "Previous mark"
+        },
+        {
+            "command": 
+            {
+                "action": "addMark",
+                "color": "#FF00FF"
+            },
+            "id": "User.addMark.3650F2D6"
+        },
+        {
+            "command": 
+            {
+                "action": "scrollToMark",
+                "direction": "next"
+            },
+            "id": "User.scrollToMark.2A0DA8E0",
+            "keys": "ctrl+down",
+            "name": "Next mark"
+        },
+        {
+            "command": 
             {
                 "action": "copy",
                 "singleLine": false
@@ -18,15 +46,7 @@
             "keys": "ctrl+v"
         },
         {
-            "command":
-            {
-                "action": "newTab"
-            },
-            "id": "User.newTab.5DEADB41",
-            "keys": "ctrl+t"
-        },
-        {
-            "command":
+            "command": 
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -36,12 +56,16 @@
             "keys": "alt+shift+d"
         },
         {
-            "command":
+            "command": "clearAllMarks",
+            "id": "User.clearAllMarks"
+        },
+        {
+            "command": 
             {
-                "action": "newWindow"
+                "action": "newTab"
             },
-            "id": "User.newWindow.5DEADB41",
-            "keys": "ctrl+n"
+            "id": "User.newTab.5DEADB41",
+            "keys": "ctrl+t"
         },
         {
             "command": "find",
@@ -49,7 +73,22 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command":
+            "command": 
+            {
+                "action": "newWindow"
+            },
+            "id": "User.newWindow.5DEADB41",
+            "keys": "ctrl+n"
+        },
+        {
+            "command": 
+            {
+                "action": "addMark"
+            },
+            "id": "User.addMark.0"
+        },
+        {
+            "command": 
             {
                 "action": "closeTab"
             },
@@ -57,66 +96,38 @@
             "keys": "ctrl+w"
         },
         {
-          "keys": "ctrl+up",
-          "command": {
-            "action": "scrollToMark",
-            "direction": "previous"
-          },
-          "name": "Previous mark"
-        },
-        {
-          "keys": "ctrl+down",
-          "command": {
-            "action": "scrollToMark",
-            "direction": "next"
-          },
-          "name": "Next mark"
-        },
-        {
-          "command": {
-            "action": "addMark"
-          }
-        },
-        {
-          "command": {
-            "action": "addMark",
-            "color": "#ff00ff"
-          }
-        },
-        {
-          "command": {
-            "action": "addMark",
-            "color": "#0000ff"
-          }
-        },
-        {
-          "command": {
-            "action": "clearAllMarks"
-          }
+            "command": 
+            {
+                "action": "addMark",
+                "color": "#0000FF"
+            },
+            "id": "User.addMark.6AC409E0"
         }
     ],
     "centerOnLaunch": true,
+    "confirmCloseAllTabs": false,
     "copyFormatting": "none",
-    "copyOnSelect": false,
+    "copyOnSelect": true,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "firstWindowPreference": "persistedWindowLayout",
     "launchMode": "maximized",
-    "newTabMenu":
+    "newTabMenu": 
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles":
+    "profiles": 
     {
-        "defaults":
+        "defaults": 
         {
+            "autoMarkPrompts": true,
             "colorScheme": "BlulocoDark",
             "cursorShape": "filledBox",
-            "font":
+            "font": 
             {
                 "face": "CaskaydiaCove Nerd Font",
-                "features":
+                "features": 
                 {
                     "cv17": 1,
                     "onum": 1,
@@ -127,10 +138,9 @@
             "opacity": 95,
             "padding": "10",
             "scrollbarState": "visible",
-            "experimental.autoMarkPrompts": true,
-            "experimental.showMarksOnScrollbar": true
+            "showMarksOnScrollbar": true
         },
-        "list":
+        "list": 
         [
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
@@ -163,7 +173,7 @@
             }
         ]
     },
-    "schemes":
+    "schemes": 
     [
         {
             "background": "#282C34",
