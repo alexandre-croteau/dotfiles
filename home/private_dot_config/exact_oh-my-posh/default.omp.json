@@ -3,6 +3,7 @@
   "version": 2,
   "final_space": true,
   "console_title_template": "{{.Folder}}{{if .Root}} ┊ root{{end}} ┊ {{.Shell}}",
+  "shell_integration": true,
   "palettes": {
     "template": "Bluloco",
     "list": {
