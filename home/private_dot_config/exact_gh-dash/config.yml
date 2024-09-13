@@ -4,11 +4,15 @@ prSections:
   - title: 🔎 To Review
     filters: is:open review-requested:@me archived:false
     layout:
+      repo:
+        width: 30
       author:
         hidden: false
   - title: ✏️ Assigned
     filters: is:open assignee:@me archived:false
     layout:
+      repo:
+        width: 30
       author:
         hidden: false
   - title: 🤖 Dependencies
@@ -27,8 +31,9 @@ defaults:
       updatedAt:
         hidden: true
       repo:
-        width: 35
+        width: 40
       author:
+        width: 20
         hidden: true
       title:
         grow: true
