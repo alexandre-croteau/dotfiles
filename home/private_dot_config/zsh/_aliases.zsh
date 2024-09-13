@@ -19,7 +19,7 @@ alias sudo='sudo -E'
 # use eza if available
 if [ -x "$(command -v eza)" ]; then
   alias ls="eza --long --header --icons --all --sort=name --group-directories-first --hyperlink --ignore-glob '.DS_Store|?'"
-  alias ll="eza --long --header --icons --all --sort=name --group-directories-first --hyperlink --ignore-glob '.DS_Store|?'"
+  alias ll="eza --long --header --icons --all --sort=name --group-directories-first --hyperlink --ignore-glob '.DS_Store|?' --git-ignore"
 else
   alias ls="ls -phlaFHAt --color=auto"
   alias ll="ls -phlaFHAt --color=auto"

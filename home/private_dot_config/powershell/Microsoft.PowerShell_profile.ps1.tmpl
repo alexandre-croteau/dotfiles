@@ -3,8 +3,10 @@ $env:PATH += ";$env:HOME/.dotnet/tools"
 oh-my-posh init pwsh --config "{{ .chezmoi.homeDir }}/.config/oh-my-posh/default.omp.json" | Invoke-Expression
 
 function Open-Eza { & eza --long --header --icons --all --sort=name --group-directories-first --hyperlink --ignore-glob '.DS_Store|?' }
-New-Alias -Name "la" -Value "Open-Eza" -Description "Eza" -Option ReadOnly -Force
-New-Alias -Name "ll" -Value "Open-Eza" -Description "Eza" -Option ReadOnly -Force
+New-Alias -Name "ls" -Value "Open-Eza" -Description "Eza" -Option ReadOnly -Force
+
+function Open-Eza-Git-Ignore { & eza --long --header --icons --all --sort=name --group-directories-first --hyperlink --ignore-glob '.DS_Store|?' --git-ignore }
+New-Alias -Name "ll" -Value "Open-Eza-Git-Ignore" -Description "Eza (git-ignore)" -Option ReadOnly -Force
 
 function Open-Neovim([string]$FileName) { if ( $FileName ) { & nvim $FileName } else { & nvim } }
 New-Alias -Name "vi" -Value "Open-Neovim" -Description "Neovim" -Option ReadOnly -Force
