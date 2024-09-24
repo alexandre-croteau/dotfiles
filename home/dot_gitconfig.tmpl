@@ -35,7 +35,11 @@
 {{- end }}
 [credential]
         helper =
+{{- if eq .chezmoi.os "windows" }}
+        helper = "{{ .chezmoi.homeDir }}/scoop/shims/git-credential-manager.exe"
+{{- else }}
         helper = manager
+{{- end }}
         guiPrompt = false
 [credential "https://github.com"]
         username = alexandre-croteau
