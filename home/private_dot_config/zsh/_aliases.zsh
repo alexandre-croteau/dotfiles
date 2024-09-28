@@ -33,9 +33,9 @@ alias grep="grep -P -i --color=auto"
 #------------------------------------------------------
 # cp
 #------------------------------------------------------
-alias cp='cp -iv'
-alias mv='mv -iv'
-alias rm='rm -iv'
+alias cp='cp -v'
+alias mv='mv -v'
+alias rm='rm -v'
 alias la='ls -alh'
 
 #------------------------------------------------------
