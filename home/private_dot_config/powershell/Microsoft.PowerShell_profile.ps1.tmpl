@@ -85,3 +85,8 @@ $Env:NODE_EXTRA_CA_CERTS="$env:USERPROFILE\.config\certs\ca.pem"
 {{- end }}
 
 $Env:DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# Set the GOPROXY environment variable
+$env:GOPROXY = "https://goproxy.io,direct"
+# Set environment variable allow bypassing the proxy for specified repos (optional)
+# $env:GOPRIVATE = "git.mycompany.com,github.com/my/private"
