@@ -88,6 +88,7 @@ theme:
       faint: "#8f9aae"
       warning: "#ff6480"
       success: "#3fc56b"
+      error: "#ff6480"
     background:
       selected: "#41444d"
     border:
