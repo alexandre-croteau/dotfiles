@@ -37,7 +37,11 @@ export FZF_DEFAULT_OPTS_FILE="$CONFIG/fzf/fzfrc"
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
-# Set the GOPROXY environment variable
-export GOPROXY=https://goproxy.io,direct
-# Set environment variable allow bypassing the proxy for specified repos (optional)
-# export GOPRIVATE=git.mycompany.com,github.com/my/private
+export GOPROXY=https://goproxy.io,direct # Set the GOPROXY environment variable
+
+export PATH="$PATH:$HOME/.local/bin" # This add pipx env
+export PIPX_DEFAULT_PYTHON="$(brew --prefix)/bin/python3"
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
