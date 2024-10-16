@@ -117,7 +117,7 @@ gui:
   border: 'rounded'
   showRandomTip: false
   showBottomLine: true
-  showDivergenceFromBaseBranch: onlyArrow
+  showDivergenceFromBaseBranch: arrowAndNumber
 keybinding:
   universal:
     togglePanel: "<tab>"
