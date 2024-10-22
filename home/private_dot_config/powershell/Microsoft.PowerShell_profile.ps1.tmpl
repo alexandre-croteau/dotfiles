@@ -81,7 +81,8 @@ Set-PsFzfOption `
   -EnableAliasFuzzyScoop
   # -AltCCommand $commandOverride
 
-$Env:NODE_EXTRA_CA_CERTS="$env:USERPROFILE\.config\certs\ca.pem"
+$Env:NODE_EXTRA_CA_CERTS="$env:USERPROFILE\.config\certs\ca-bundle.pem"
+$Env:SSL_CERT_FILE="$env:USERPROFILE\.config\certs\ca-bundle.pem"
 
 $Env:PIPX_DEFAULT_PYTHON="$(scoop prefix python)\python.exe"
 {{- end }}

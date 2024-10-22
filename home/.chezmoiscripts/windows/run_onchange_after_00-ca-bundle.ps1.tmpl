@@ -1,0 +1,2 @@
+Get-Content "$(scoop prefix cacert)/cacert.pem", "{{ .chezmoi.homeDir }}/.config/certs/zscaler.pem" -Delimiter ([Environment]::NewLine) `
+  | Set-Content "{{ .chezmoi.homeDir }}/.config/certs/ca-bundle.pem" -Encoding UTF8

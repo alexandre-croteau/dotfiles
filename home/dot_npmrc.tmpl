@@ -29,7 +29,7 @@
 ; cache-max=null
 ; cache-min=0
 {{- if eq .chezmoi.os "windows" }}
-cafile=~/ca.pem
+cafile=~/.config/certs/ca-bundle.pem
 {{- else }}
 ; cafile=
 {{- end }}
@@ -154,7 +154,7 @@ editor=code
 ; sign-git-commit=false
 ; sign-git-tag=false
 ; strict-peer-deps=false
-strict-ssl=false
+; strict-ssl=true
 ; tag=latest
 ; tag-version-prefix=v
 ; timing=false
