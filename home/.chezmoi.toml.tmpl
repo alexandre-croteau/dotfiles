@@ -1,6 +1,6 @@
 encryption = "gpg"
 
-{{ $email := promptStringOnce . "email" "Email address" "alexandre.a.croteau@gmail.com" -}}
+{{ $email := promptStringOnce . "email" "Email address" "<email>@<domain>" -}}
 
 [gpg]
     recipient = "Alexandre Croteau"
